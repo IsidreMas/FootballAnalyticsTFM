@@ -11,7 +11,7 @@ a ML model or do statistics with more than one game.
 """
 
 # Project modules
-import Tracking_IO as io
+import modules.Tracking_IO as io
 
 class Match:
   def __init__(self, data_source, match_id, name = '[default_name]', field_dimen = (106.,68.)):
