@@ -1,5 +1,2 @@
 pandas
-matplotlib
 numpy
-jupyter
-scipy
