@@ -18,13 +18,15 @@ import numpy as np
 import Tracking_IO as io
 
 class Match:
-  def __init__(self, name, data_source, match_id):
+  def __init__(self, data_source, match_id, name = 'Default_name', field_dimen = (106.,68.)):
     self.name = name
     self.data_source = data_source
     self.match_id = match_id
-    self.read_home_data(data_source=self.data_source, match_id=self.match_id)
-    self.read_away_data(data_source=self.data_source, match_id=self.match_id)
-    self.read_events_data(data_source=self.data_source, match_id=self.match_id)
+    self.read_match_data(data_source=self.data_source, match_id=self.match_id)
+    self.tracking_home = io.to_metric_units(self.tracking_home,data_source = data_source,field_dimen = field_dimen)
+    self.tracking_away = io.to_metric_units(self.tracking_away, data_source = data_source, field_dimen = field_dimen)
+    self.events = io.to_metric_units(self.events, data_source = data_source, field_dimen = field_dimen)
+    self.tracking_home, self.tracking_away, self.events = io.to_single_playing_direction(self.tracking_home, self.tracking_away, self.events)
 
   def process_all(self):
     """
@@ -32,18 +34,19 @@ class Match:
     """
     print(f"The match {self.name} has been processed.")
   
-  def read_home_data(self, data_source, match_id):
+  def read_match_data(self, data_source, match_id):
     """
-    Reads the home data of a match from the data source.
+    Reads the tracking data from given data source and match identifiers and defines atributte dataframes
+    for the home team, away team and events.
+  
+    Parameters:
+
+    data_source (string): Identifier of the data source, must be chosen from the available:
+                            - 'metrica-sports'
+
+    match_id: Identifier of the match from the data source.
+  
+    Defines:
+    self.tracking_home, self.tracking_away, self.events: Dataframes with the tracking data read from source.
     """
-    self.tracking_home = io.read_match_data()
-  def read_away_data(self, data_source, match_id):
-    """
-    Reads the away data of a match from the data source.
-    """
-    self.tracking_away = 1
-  def read_events_data(self, data_source, match_id):
-    """
-    Reads the events data of a match from the data source.
-    """
-    self.events = 1
+    self.tracking_home, self.tracking_away, self.events = io.read_match_data(data_source, match_id)
