@@ -15,8 +15,7 @@ from the source chosen, the purpose of this is that other modules can easily ana
 
 ON WORK: (An standard format still needs to be defined, for now the format in use is the metrica-sports format)
 
-
-Each source is assumed to have the same format, in case a source has different formats exceptions in the 
+Dev guide: Each source is assumed to have the same format, in case a source has different formats exceptions in the 
 case definitions must be made. The source is passed to the source-sensitive functions as an argument.
 
 Example: function_name(data_source = 'metrica-sports')
@@ -133,7 +132,7 @@ def merge_tracking_data(home,away):
     """
     return home.drop(columns=['ball_x', 'ball_y']).merge( away, left_index=True, right_index=True )
     
-def to_metric_units(data,data_source,field_dimen=(106.,68.)):
+def to_metric_coordinates(data,data_source,field_dimen=(106.,68.)):
     """
     Reads the events data from given data source and match identifiers and returns a dataframe
     for events.
@@ -186,7 +185,7 @@ def to_single_playing_direction(home,away,events):
         tracking.loc[second_half_idx:,columns] *= -1
     return home,away,events
 
-# Functions below not reviewed.
+# Functions below not reviewed from the original Laurie Shaw's version.
 def find_playing_direction(team,teamname):
     '''
     Find the direction of play for the team (based on where the goalkeepers are at kickoff). +1 is left->right and -1 is right->left
