@@ -126,9 +126,9 @@ def calc_player_norm_positions(team1, team2 = None):
             team1[player + "_normx"] = (team1[player + "_x"]-team1['team_meanx'])/team1['team_sdx']
             team1[player + "_normy"] = (team1[player + "_y"]-team1['team_meany'])/team1['team_sdy']
     
-    if False:
+    if team2 is not None:
         # Get the player ids (REVISE THIS, MIGHT NOT WORK WITH OTHER DATA SOURCES/PLAYER IDS)
-        team2_players_ids = np.unique( [ c.split('_')[0]+'_'+c.split('_')[1] for c in team2.columns if c.split('_')[0] in ['Home','Away'] ] )
+        team2_players_ids = np.unique( [ c.split('_')[0]+'_'+c.split('_')[1] for c in team2.columns if c.split('_')[0] in team2.columns[4].split('_')[0]] )
         for player in team2_players_ids:
             team1[player + "_normx"] = (team2[player + "_x"]-team1['team_meanx'])/team1['team_sdx']
             team1[player + "_normy"] = (team2[player + "_y"]-team1['team_meany'])/team1['team_sdy']

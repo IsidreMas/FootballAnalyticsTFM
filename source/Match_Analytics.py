@@ -59,5 +59,5 @@ class Match:
     self.tracking_away = dyn.calc_player_velocities(self.tracking_away)
   
   def calculate_player_normals(self):
-    self.tracking_home = dyn.calc_player_norm_positions(self.tracking_home, self.tracking_away)
-    self.tracking_away = dyn.calc_player_norm_positions(self.tracking_away, self.tracking_home)
+    self.tracking_away = dyn.calc_player_norm_positions(team1 = self.tracking_away, team2 = self.tracking_home)
+    self.tracking_home = dyn.calc_player_norm_positions(team1 = self.tracking_home, team2= self.tracking_away)
