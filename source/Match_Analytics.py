@@ -12,6 +12,7 @@ a ML model or do statistics with more than one game.
 
 # Project modules
 import Tracking_IO as io
+import Tracking_Dynamics as dyn
 
 class Match:
   def __init__(self, data_source, match_id, name = '[default_name]', field_dimen = (106.,68.)):
@@ -32,6 +33,7 @@ class Match:
       self.tracking_away = io.to_metric_coordinates(self.tracking_away, data_source = self.data_source, field_dimen = self.field_dimen)
       self.events = io.to_metric_coordinates(self.events, data_source = self.data_source, field_dimen = self.field_dimen)
       self.tracking_home, self.tracking_away, self.events = io.to_single_playing_direction(self.tracking_home, self.tracking_away, self.events)
+      self.calculate_player_velocities()
       self.preprocessed = True
     return self
   
@@ -51,3 +53,11 @@ class Match:
     self.tracking_home, self.tracking_away, self.events: Dataframes with the tracking data read from source.
     """
     self.tracking_home, self.tracking_away, self.events = io.read_match_data(data_source, match_id)
+  
+  def calculate_player_velocities(self):
+    self.tracking_home = dyn.calc_player_velocities(self.tracking_home)
+    self.tracking_away = dyn.calc_player_velocities(self.tracking_away)
+  
+  def calculate_player_normals(self):
+    self.tracking_home = dyn.calc_player_norm_positions(self.tracking_home, self.tracking_away)
+    self.tracking_away = dyn.calc_player_norm_positions(self.tracking_away, self.tracking_home)
