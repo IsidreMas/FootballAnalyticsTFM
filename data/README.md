@@ -6,4 +6,4 @@ modified to read and preprocess other formats to the standarized format used by 
 Currently available sources:
 
 /data
-    /MetricaSportsSampleData        tag: 'metrica-sport'
+    /MetricaSportsSampleData        tag: 'metrica-sports'
