@@ -15,7 +15,34 @@ def draw_pitch(field_dimen = FIELD_DIMENSIONS,
                grass_alpha = 1,
                line_color = "white",
                line_width = 2,
-               stripes_number = 7):
+               noise_strength = 1000,
+               paraboloid_gradient = True,
+               paraboloid_strength = 1/5,
+               stripes_number = 7,
+               pixel_factor = 10):
+    """
+    Plot a custom football pitch on a Bokeh Figure and return it.
+    
+    Parameters
+    -----------
+        field_dimen: Tuple containing the dimensions of the field. Default: FIELD_DIMENSIONS = (length = 106, width = 60)
+        fig:
+        size:
+        padding:
+        pattern:
+        noise:
+        background_fill_color:
+        color_from:
+        color_to:
+        grass_alpha:
+        line_width:
+        stripes_number: 
+        
+    Returns
+    -----------
+       bokeh Figure : Returns a figure with a football pitch drawn on it.
+
+    """
 
     if fig is None:
         p = figure(width = int(field_dimen[0])*size,
@@ -34,7 +61,15 @@ def draw_pitch(field_dimen = FIELD_DIMENSIONS,
     else:
         p = fig
     
-    d = generate_grass_pattern(field_dimen, padding, pattern = pattern, noise = noise, stripes_number = stripes_number)
+    d = generate_grass_pattern( field_dimen,
+                                padding,
+                                pattern = pattern,
+                                noise = noise,
+                                stripes_number = stripes_number,
+                                noise_strength = noise_strength,
+                                paraboloid_gradient = paraboloid_gradient,
+                                paraboloid_strength = paraboloid_strength,
+                                pixel_factor = pixel_factor)
     p.image(image=[d],
             x=-field_dimen[0]/2-padding,
             y=-field_dimen[1]/2-padding,
@@ -101,20 +136,27 @@ def draw_pitch(field_dimen = FIELD_DIMENSIONS,
 def generate_grass_pattern(field_dimen = FIELD_DIMENSIONS,
                            padding = 5,
                            pattern = "stripes",
-                           noise = True, 
-                           stripes_number = 7):
-    N = 1000
-    x = np.linspace(0, field_dimen[0], N)
-    y = np.linspace(0, field_dimen[1], N)
+                           noise = True,
+                           noise_strength = 1000,
+                           paraboloid_gradient = True,
+                           paraboloid_strength = 1/5,
+                           stripes_number = 7,
+                           pixel_factor = 10):
+    if pixel_factor > 50:
+        raise ValueError('pixel_factor argument can\'t exceed 50')
+    x = np.linspace(0, field_dimen[0], pixel_factor*int(field_dimen[0]))
+    y = np.linspace(0, field_dimen[1], pixel_factor*int(field_dimen[1]))
     xx, yy = np.meshgrid(x, y)
     d = np.zeros(shape= xx.shape)
     
+    if noise:
+        d += np.random.randint(0, noise_strength, xx.shape)
+    if paraboloid_gradient:
+        d -= ((xx-field_dimen[0]/2)**2+5*(yy-field_dimen[1]/2)**2)*paraboloid_strength
+
     if pattern is not None:
         pattern = pattern.split('_')
         stripes_width = field_dimen[0]/stripes_number
-        if noise:
-            d += np.random.randint(0, 1000, xx.shape)
-            d -= ((xx-field_dimen[0]/2)**2+5*(yy-field_dimen[1]/2)**2)/5
 
         if 'stripes'in pattern:       
             if ('vertical' in pattern) or ('horizontal' not in pattern):
