@@ -1,3 +1,4 @@
+from os import name
 import numpy as np
 from bokeh.plotting import figure
 from matplotlib.colors import LinearSegmentedColormap
@@ -37,13 +38,16 @@ def draw_pitch(field_dimen = FIELD_DIMENSIONS,
         grass_alpha:
         line_width:
         stripes_number: 
+        noise_strength:
+        paraboloid_gradient:
+        paraboloid_strength:
+        pixel_factor:
         
     Returns
     -----------
        bokeh Figure : Returns a figure with a football pitch drawn on it.
 
     """
-
     if fig is None:
         p = figure(width = int(field_dimen[0])*size,
                    height=int(field_dimen[1])*size,

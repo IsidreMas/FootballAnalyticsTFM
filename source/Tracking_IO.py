@@ -181,7 +181,7 @@ def to_single_playing_direction(home,away,events):
     """
     for tracking in [home,away,events]:
         second_half_idx = tracking.Period.values.searchsorted(1.5, side='right')+1
-        columns = [c for c in tracking.columns if c[-1].lower() in ['x']]
+        columns = [c for c in tracking.columns if c[-1].lower() in ['x','y']]
         tracking.loc[second_half_idx:,columns] *= -1
     return home,away,events
 

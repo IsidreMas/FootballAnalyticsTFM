@@ -133,6 +133,9 @@ def calc_player_norm_positions(team1, team2 = None):
             team1[player + "_normx"] = (team2[player + "_x"]-team1['team_meanx'])/team1['team_sdx']
             team1[player + "_normy"] = (team2[player + "_y"]-team1['team_meany'])/team1['team_sdy']
 
+    team1["ball_normx"] = (team1["ball_x"]-team1["team_meanx"])/team1["team_sdx"]
+    team1["ball_normy"] = (team1["ball_y"]-team1["team_meany"])/team1["team_sdy"]
+
 
 
     return team1
