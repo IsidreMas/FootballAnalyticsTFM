@@ -1,6 +1,7 @@
 from os import name
 import numpy as np
 from bokeh.plotting import figure
+from bokeh.models import Range1d
 from matplotlib.colors import LinearSegmentedColormap
 from Tracking_Constants import *
 
@@ -20,7 +21,8 @@ def draw_pitch(field_dimen = FIELD_DIMENSIONS,
                paraboloid_gradient = True,
                paraboloid_strength = 1/5,
                stripes_number = 7,
-               pixel_factor = 10):
+               pixel_factor = 10,
+               **kwargs):
     """
     Plot a custom football pitch on a Bokeh Figure and return it.
     
@@ -51,16 +53,18 @@ def draw_pitch(field_dimen = FIELD_DIMENSIONS,
     if fig is None:
         p = figure(width = int(field_dimen[0])*size,
                    height=int(field_dimen[1])*size,
-                   background_fill_color = background_fill_color
+                   background_fill_color = background_fill_color, 
+                   **kwargs
                   )
         p.xgrid.grid_line_color = None
         p.ygrid.grid_line_color = None
-        p.x_range.range_padding = 0
-        p.y_range.range_padding = 0
+        p.x_range = Range1d(-field_dimen[0]/2-padding, field_dimen[0]/2+padding)
+        p.y_range = Range1d(-field_dimen[1]/2-padding, field_dimen[1]/2+padding)
         p.x_range.bounds = [-field_dimen[0]/2-padding,field_dimen[0]/2+padding]
         p.y_range.bounds = [-field_dimen[1]/2-padding,field_dimen[1]/2+padding]
         p.axis.minor_tick_line_color = None
         p.axis.visible = False
+        p.toolbar.logo = None
         
     else:
         p = fig

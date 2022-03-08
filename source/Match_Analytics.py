@@ -9,6 +9,7 @@ we would like to process many Match instances to obtain the necessary data to tr
 a ML model or do statistics with more than one game.
 
 """
+import numpy as np
 
 # Project modules
 import Tracking_IO as io
@@ -23,6 +24,9 @@ class Match:
     self.field_dimen = field_dimen
     self.read_match_data(data_source=self.data_source, match_id=self.match_id)
     self.preprocessed = False
+    self.home_players = io.find_players(self.tracking_home)
+    self.away_players = io.find_players(self.tracking_away)
+    self.all_players = np.concatenate([self.home_players, self.away_players])
 
   def preprocess(self):
     """
@@ -54,6 +58,7 @@ class Match:
     self.tracking_home, self.tracking_away, self.events: Dataframes with the tracking data read from source.
     """
     self.tracking_home, self.tracking_away, self.events = io.read_match_data(data_source, match_id)
+  
   
   def calculate_player_velocities(self):
     self.tracking_home = dyn.calc_player_velocities(self.tracking_home)

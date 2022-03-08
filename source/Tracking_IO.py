@@ -185,6 +185,10 @@ def to_single_playing_direction(home,away,events):
         tracking.loc[second_half_idx:,columns] *= -1
     return home,away,events
 
+
+def find_players(team):
+    return np.unique( [ c.split('_')[0]+'_'+c.split('_')[1] for c in team.columns if ('x' in c.split('_') and c.split('_')[0] != 'ball') ] )
+
 # Functions below not reviewed from the original Laurie Shaw's version.
 def find_playing_direction(team,teamname):
     '''
