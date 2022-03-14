@@ -2,6 +2,8 @@ LOW_GRASS_COLOR = (0.25, 0.44, 0.12,1)
 HIGH_GRASS_COLOR = (0.38612245, 0.77142857, 0.3744898,1)
 # ALL DIMENSIONS IN m
 FIELD_DIMENSIONS = (106.,68.) # Default pitch dimensions: (length, width)
+HALF_FIELD_WIDTH = FIELD_DIMENSIONS[0]/2
+HALF_FIELD_HEIGHT = FIELD_DIMENSIONS[1]/2
 METERS_PER_YARD = 0.9144 # unit conversion from yards to meters
 # Soccer field dimensions typically defined in yards, so we need to convert to meters
 HALF_GOAL_LINE = 8*METERS_PER_YARD/2

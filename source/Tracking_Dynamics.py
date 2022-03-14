@@ -13,7 +13,7 @@ Data can be found at: https://github.com/metrica-sports/sample-data
 import numpy as np
 import scipy.signal as signal
 
-def calc_player_velocities(team, smoothing=True, filter_='Savitzky-Golay', window=7, polyorder=1, maxspeed = 12):
+def calc_player_velocities(team, players = None, smoothing=True, filter_='Savitzky-Golay', window=7, polyorder=1, maxspeed = 12):
     """ calc_player_velocities( tracking_data )
     
     Calculate player velocities in x & y direciton, and total player speed at each timestamp of the tracking data
@@ -36,7 +36,8 @@ def calc_player_velocities(team, smoothing=True, filter_='Savitzky-Golay', windo
     team = remove_player_cinematics(team)
     
     # Get the player ids
-    player_ids = np.unique( [ c.split('_')[0]+'_'+c.split('_')[1] for c in team.columns if c[:4] in ['Home','Away'] ] )
+    if not any(players):
+        players = np.unique( [ c.split('_')[0]+'_'+c.split('_')[1] for c in team.columns if c[:4] in ['Home','Away'] ] )
 
     # Calculate the timestep from one frame to the next. Should always be 0.04 within the same half
     dt = team['Time [s]'].diff()
@@ -45,7 +46,7 @@ def calc_player_velocities(team, smoothing=True, filter_='Savitzky-Golay', windo
     second_half_idx = team.Period.values.searchsorted(1.5, side='right')+1
     
     # estimate velocities for players in team
-    for player in player_ids: # cycle through players individually
+    for player in players: # cycle through players individually
         # difference player positions in timestep dt to get unsmoothed estimate of velocity
         vx = team[player+"_x"].diff() / dt
         vy = team[player+"_y"].diff() / dt

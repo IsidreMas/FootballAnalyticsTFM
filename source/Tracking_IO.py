@@ -76,6 +76,8 @@ def read_event_data(data_source,game_id):
     if data_source == 'metrica-sports':
         eventfile = f"/Sample_Game_{game_id}/Sample_Game_{game_id}_RawEventsData.csv"
         events = pd.read_csv('{}/{}'.format(DATADIR, eventfile)) # read data
+        events['From'] =events['Team'] +'_'+ events['From'].str.replace('Player', '')
+        events['To'] =events['Team'] +'_'+ events['To'].str.replace('Player', '')
     return events
 
 def tracking_data(data_source,game_id,teamname):
