@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 from Tracking_Constants import *
+from Tracking_Filters import time_window
 
 
 def bivariate_normal_distribution(tracking_data, players = None, ball = False, against = False):
@@ -102,7 +103,4 @@ def histogram(tracking_data,
         return {'top_x':xhist, 'bottom_x':xhist*0, 'left_x':xedges[:-1], 'right_x':xedges[1:]}, {'right_y':yhist, 'left_y':yhist*0, 'bottom_y':yedges[:-1], 'top_y':yedges[1:]}
     else:
         return xhist, yhist, xedges, yedges
-
-def mean_quadratic_distance(window, step):
-    
-    return 0
+        

@@ -1,4 +1,6 @@
 import numpy as np
+import networkx as nx
+
 from bokeh.plotting import figure
 from bokeh.models import Range1d
 from matplotlib.colors import LinearSegmentedColormap
@@ -203,8 +205,9 @@ def linear_cmap(color_from = LOW_GRASS_COLOR, color_to = HIGH_GRASS_COLOR):
     return cmap
 
 def plot_sliding_window(match_object, 
-                        filtered_home_df = None, 
-                        filtered_away_df = None, 
+                        filtered_home_df=None, 
+                        filtered_away_df=None,
+                        filtered_events=None, 
                         normalized = None):
     # Set up plot
     if normalized:
@@ -219,6 +222,10 @@ def plot_sliding_window(match_object,
         tracking_away = filtered_away_df
     else:
        tracking_away = match_object.tracking_away
+    if isinstance(filtered_events, pd.DataFrame):
+        events = filtered_events
+    else:
+       events = match_object.events
 
     renderer = plot.multi_line([], [], line_width=3, alpha=0.4, color='black')
     draw_tool = FreehandDrawTool(renderers=[renderer])
@@ -250,11 +257,14 @@ def plot_sliding_window(match_object,
                                     bar_color = 'black', height = 10)
     # Set up data
     home_df = time_window(tracking_home, 
-                                home_time_window.value[0], 
-                                home_time_window.value[1])
+                          home_time_window.value[0], 
+                          home_time_window.value[1])
     away_df = time_window(tracking_away, 
-                                away_time_window.value[0], 
-                                away_time_window.value[1])
+                          away_time_window.value[0], 
+                          away_time_window.value[1])
+    events_df = time_window(events, 
+                            away_time_window.value[0], 
+                            away_time_window.value[1])
     if isinstance(normalized, str):
         ball_dist_stats = bivariate_normal_distribution(home_df, ball = True)
         if normalized == 'Home':
@@ -435,6 +445,42 @@ def plot_sliding_window(match_object,
 
     def modify_doc(doc):
         doc.add_root(row(inputs, width=800))
+
+
+    handler = FunctionHandler(modify_doc)
+    app = Application(handler)
+    show(app)
+
+def plot_match(match_object, 
+                        filtered_home_df=None, 
+                        filtered_away_df=None,
+                        filtered_events=None, 
+                        normalized = None):
+    # Set up plot
+    if normalized:
+        plot = figure(tools = ('tap','pan'), toolbar_location = 'left')
+        plot2 = figure(tools = ('tap','pan'), toolbar_location = 'left')
+        plot3 = figure(tools = ('tap','pan'), toolbar_location = 'left')
+    else:
+        plot = draw_pitch(tools = ('tap','pan'), toolbar_location = 'left')
+        plot2 = draw_pitch(tools = ('tap','pan'), toolbar_location = 'left')
+        plot3 = draw_pitch(tools = ('tap','pan'), toolbar_location = 'left')
+
+    if isinstance(filtered_home_df, pd.DataFrame):
+        tracking_home = filtered_home_df
+    else:
+        tracking_home = match_object.tracking_home
+    if isinstance(filtered_away_df, pd.DataFrame):
+        tracking_away = filtered_away_df
+    else:
+       tracking_away = match_object.tracking_away
+    if isinstance(filtered_events, pd.DataFrame):
+        events = filtered_events
+    else:
+       events = match_object.events
+
+    def modify_doc(doc):
+        doc.add_root(row(plot, width=800))
 
 
     handler = FunctionHandler(modify_doc)
