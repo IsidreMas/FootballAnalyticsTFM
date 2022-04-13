@@ -1,13 +1,14 @@
+from turtle import update, width
 import numpy as np
 import networkx as nx
 
 from bokeh.plotting import figure
-from bokeh.models import Range1d
+from bokeh.models import Range1d, LinearAxis
 from matplotlib.colors import LinearSegmentedColormap
 from bokeh.io import curdoc, show
-from bokeh.layouts import row, gridplot
-from bokeh.models import ColumnDataSource, LabelSet
-from bokeh.models.widgets import RangeSlider
+from bokeh.layouts import row, gridplot, column, widgetbox
+from bokeh.models import ColumnDataSource, LabelSet, DataTable, TableColumn
+from bokeh.models.widgets import RangeSlider, Slider, Button
 from bokeh.io import output_notebook
 from bokeh.application import Application
 from bokeh.application.handlers import FunctionHandler
@@ -451,20 +452,22 @@ def plot_sliding_window(match_object,
     app = Application(handler)
     show(app)
 
-def plot_match(match_object, 
+def play_match(match_object, 
                         filtered_home_df=None, 
                         filtered_away_df=None,
                         filtered_events=None, 
-                        normalized = None):
+                        normalized = None,
+                        **kwargs):
     # Set up plot
-    if normalized:
-        plot = figure(tools = ('tap','pan'), toolbar_location = 'left')
-        plot2 = figure(tools = ('tap','pan'), toolbar_location = 'left')
-        plot3 = figure(tools = ('tap','pan'), toolbar_location = 'left')
-    else:
-        plot = draw_pitch(tools = ('tap','pan'), toolbar_location = 'left')
-        plot2 = draw_pitch(tools = ('tap','pan'), toolbar_location = 'left')
-        plot3 = draw_pitch(tools = ('tap','pan'), toolbar_location = 'left')
+    plot = draw_pitch(tools = ('tap','pan'), toolbar_location = 'left', **kwargs)
+    norm_plot_home = figure(toolbar_location=None, width=int(plot.width/2),height=int(plot.width/2),
+                            x_range=[-3,3], y_range=[-3,3], min_border=0, min_border_left=50, y_axis_location="left", x_axis_location = 'above')
+    norm_plot_away = figure(toolbar_location=None, width=int(plot.width/2),height=int(plot.width/2),
+                            x_range=[-3,3], y_range=[-3,3], min_border=0, min_border_left=50, y_axis_location="right", x_axis_location = 'above')
+    norm_plot_home.axis.major_tick_in = 10
+    norm_plot_home.axis.major_tick_out = 0
+    norm_plot_home.axis.minor_tick_in = 5
+    norm_plot_home.axis.minor_tick_out = 0
 
     if isinstance(filtered_home_df, pd.DataFrame):
         tracking_home = filtered_home_df
@@ -479,8 +482,154 @@ def plot_match(match_object,
     else:
        events = match_object.events
 
+    renderer = plot.multi_line([], [], line_width=3, alpha=0.4, color='black')
+    draw_tool = FreehandDrawTool(renderers=[renderer])
+    plot.add_tools(draw_tool)
+    plot.toolbar.active_drag = draw_tool
+    taptool = plot.select(type=TapTool)[0]
+
+    frame_home = match_object.tracking_home.iloc[[0]]
+    frame_home.columns = frame_home.columns.str.rsplit(r'_', 1, expand=True)
+    home_df = frame_home.stack(0).droplevel(0).filter(like="Home", axis=0)
+    home_df['player'] = home_df.index.str.split("_").str[1]
+    home_df['end_vx'] = home_df['vx']+home_df['x']
+    home_df['end_vy'] = home_df['vy']+home_df['y']
+
+    frame_away = match_object.tracking_away.iloc[[0]]
+    frame_away.columns = frame_away.columns.str.rsplit(r'_', 1, expand=True)
+    away_df = frame_away.stack(0).droplevel(0).filter(like="Away", axis=0)
+    away_df['player'] = away_df.index.str.split("_").str[1]
+    away_df['end_vx'] = away_df['vx']+away_df['x']
+    away_df['end_vy'] = away_df['vy']+away_df['y']
+
+    ball_df = frame_home.stack(0).droplevel(0).filter(like="ball", axis=0)
+
+    sources_home = ColumnDataSource(data = home_df.to_dict('series'))
+    sources_away = ColumnDataSource(data = away_df.to_dict('series'))
+    sources_ball = ColumnDataSource(data = ball_df.to_dict('series'))
+
+    sources_events = ColumnDataSource(time_window(match_object.events, 0-200, 0+200, frame=True).to_dict("Series"))
+
+    columns = [
+        TableColumn(field="Team", title="Team"),
+        TableColumn(field="Type", title="Type"),
+        TableColumn(field="Subtype", title="Subtype"),
+        TableColumn(field="From", title="From"),
+        TableColumn(field="To", title="To"),
+        TableColumn(field="Start Time [s]", title="Start Time [s]"),
+        TableColumn(field="End Time [s]", title="End Time [s]")
+    ]
+    data_table = DataTable(source=sources_events, columns=columns, width=800, height=100)
+
+    
+    renderer1 = plot.circle('x', 'y', source=sources_away, alpha=0.5, size = 15, color = match_object.away_color)
+    renderer2 = plot.circle('x', 'y', source=sources_home, alpha=0.5, size = 15, color = match_object.home_color)
+    renderer3 = plot.circle('x', 'y', source=sources_ball, alpha=0.5, size = 5, color = "black")
+    norm_home_render = norm_plot_home.circle('normx', 'normy', source=sources_home, alpha=0.5, size = 15, color = match_object.home_color)
+    norm_away_render = norm_plot_away.circle('normx', 'normy', source=sources_away, alpha=0.5, size = 15, color = match_object.away_color)
+    taptool.renderers = [renderer1, renderer2, renderer3, norm_home_render, norm_away_render]
+
+    plot.segment(x0="x", y0="y", x1="end_vx", y1="end_vy", line_color=match_object.home_color, source=sources_home, line_width=3)
+    plot.segment(x0="x", y0="y", x1="end_vx", y1="end_vy", line_color=match_object.away_color, source=sources_away, line_width=3)
+
+    freq = Slider(title="Game Time", value=0, start=0, end=len(match_object.tracking_home), step=1, width_policy='max')
+
+    labels_home = LabelSet(x='x', y='y', text='player',
+                            source=sources_home, text_color = "white",
+                            text_font_size = "10px",
+                            text_baseline="middle", text_align="center")
+    labels_away = LabelSet(x='x', y='y', text='player',
+                            source=sources_away, text_color = "white",
+                            text_font_size = "10px", text_baseline="middle", text_align="center")
+    labels_home_norm = LabelSet(x='normx', y='normy', text='player',
+                            source=sources_home, text_color = "white",
+                            text_font_size = "10px",
+                            text_baseline="middle", text_align="center")
+    labels_away_norm = LabelSet(x='normx', y='normy', text='player',
+                            source=sources_away, text_color = "white",
+                            text_font_size = "10px", text_baseline="middle", text_align="center")
+    plot.add_layout(labels_home)
+    plot.add_layout(labels_away)
+    norm_plot_home.add_layout(labels_home_norm)
+    norm_plot_away.add_layout(labels_away_norm)
+
+    def update_data(attrname, old, new):
+        k = int(freq.value)
+
+        frame_home = match_object.tracking_home.iloc[[k]]
+        frame_home.columns = frame_home.columns.str.rsplit(r'_', 1, expand=True)
+        home_df = frame_home.stack(0).droplevel(0).filter(like="Home", axis=0)
+        home_df['player'] = home_df.index.str.split("_").str[1]
+        home_df['end_vx'] = home_df['vx']+home_df['x']
+        home_df['end_vy'] = home_df['vy']+home_df['y']
+
+        frame_away = match_object.tracking_away.iloc[[k]]
+        frame_away.columns = frame_away.columns.str.rsplit(r'_', 1, expand=True)
+        away_df = frame_away.stack(0).droplevel(0).filter(like="Away", axis=0)
+        away_df['player'] = away_df.index.str.split("_").str[1]
+        away_df['end_vx'] = away_df['vx']+away_df['x']
+        away_df['end_vy'] = away_df['vy']+away_df['y']
+
+        ball_df = frame_home.stack(0).droplevel(0).filter(like="ball", axis=0)                          
+        
+        sources_home.data=home_df.to_dict('series')
+        sources_away.data=away_df.to_dict('series')
+        sources_ball.data=ball_df.to_dict('series')
+
+        time = int(frame_home['Time [s]'].iloc[0])
+
+        sources_events.data = time_window(match_object.events, 0, time).to_dict("Series")
+
+
+    freq.on_change('value', update_data)
+
+    button = Button(label='►', width=60)
+    forward_button = Button(label='▸▸', width=60)
+    backward_button = Button(label='◂◂', width=60)
+
+    global update_rate
+    update_rate = 1
+
+    def animate_update():
+        frame = freq.value + update_rate
+        if frame > len(match_object.tracking_home):
+            frame = 0
+        freq.value = frame
+
+    def animate():
+        global callback_id
+        global update_rate
+        if button.label == '►':
+            button.label = '❚❚'
+            update_rate = 1
+            callback_id = curdoc().add_periodic_callback(animate_update, 40)
+        else:
+            button.label = '►'
+            curdoc().remove_periodic_callback(callback_id)
+            callback_id = None
+    
+    def forward_update():
+        global update_rate
+        update_rate *= 2
+    def backward_update():
+        global update_rate
+        update_rate /= 2
+
+    button.on_click(animate)
+    forward_button.on_click(forward_update)
+    backward_button.on_click(backward_update)
+    
+    def select_event(attr, old, new):
+        selectionRowIndex=sources_events.selected.indices[0]
+        freq.value = match_object.tracking_home['Time [s]'].sub(sources_events.data['Start Time [s]'][selectionRowIndex]).abs().idxmin()
+
+
+    sources_events.selected.on_change('indices', select_event)
+
+    inputs = gridplot([[row(norm_plot_home, norm_plot_away)],[plot], [data_table], [row([backward_button, button, forward_button, freq])]], merge_tools=False)
+
     def modify_doc(doc):
-        doc.add_root(row(plot, width=800))
+        doc.add_root(row(inputs, width=800))
 
 
     handler = FunctionHandler(modify_doc)

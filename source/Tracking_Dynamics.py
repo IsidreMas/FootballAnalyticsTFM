@@ -41,6 +41,7 @@ def calc_player_velocities(team, players = None, smoothing=True, filter_='Savitz
 
     # Calculate the timestep from one frame to the next. Should always be 0.04 within the same half
     dt = team['Time [s]'].diff()
+    players = np.append(players, "ball")
     
     # index of first frame in second half
     second_half_idx = team.Period.values.searchsorted(1.5, side='right')+1
