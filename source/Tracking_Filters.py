@@ -26,6 +26,8 @@ def filter_dead_time(match_object):
     for period in ranges.iterrows():
         match_object.tracking_home = match_object.tracking_home[~match_object.tracking_home['Time [s]'].between(period[1][0], period[1][1])]
         match_object.tracking_away = match_object.tracking_away[~match_object.tracking_away['Time [s]'].between(period[1][0], period[1][1])]
+        # TODO: Dataframe with matched dead times steps
+    return 0
 
 def possesion_filter(match_object, 
                      possesion_df=None, 

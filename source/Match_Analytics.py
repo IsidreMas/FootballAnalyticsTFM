@@ -60,7 +60,7 @@ class Match:
       self.calculate_player_velocities()
       self.calculate_player_normals()
       self.preprocessed = True
-      filter_dead_time(self)
+      self.dead_time_steps = filter_dead_time(self)
       print('Match preprocessed successfully.\n')
     return self
   
