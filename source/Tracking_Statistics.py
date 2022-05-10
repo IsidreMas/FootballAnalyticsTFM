@@ -18,6 +18,7 @@ def bivariate_normal_distribution(tracking_data, players = None, ball = False, a
     if not against:
         dist_stats['x_mean'] = [tracking_data[player+'_x'].mean() for player in players]
         dist_stats['y_mean'] = [tracking_data[player+'_y'].mean() for player in players]
+        dist_stats['distance'] = [np.sqrt(tracking_data[player+'_x'].diff()**2+tracking_data[player+'_x'].diff()**2).sum() for player in players]
     dist_stats['normx_mean'] = [tracking_data[player+'_normx'].mean() for player in players]
     dist_stats['normy_mean'] = [tracking_data[player+'_normy'].mean() for player in players]
 

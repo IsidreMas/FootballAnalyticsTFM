@@ -209,12 +209,13 @@ def plot_sliding_window(match_object,
                         filtered_home_df=None, 
                         filtered_away_df=None,
                         filtered_events=None, 
-                        normalized = None):
+                        normalized = None,
+                        **kwargs):
     # Set up plot
     if normalized:
         plot = figure(tools = ('tap','pan'), toolbar_location = 'left')
     else:
-        plot = draw_pitch(tools = ('tap','pan'), toolbar_location = 'left')
+        plot = draw_pitch(tools = ('tap','pan'), toolbar_location = 'left', **kwargs)
     if isinstance(filtered_home_df, pd.DataFrame):
         tracking_home = filtered_home_df
     else:
@@ -451,6 +452,7 @@ def plot_sliding_window(match_object,
     handler = FunctionHandler(modify_doc)
     app = Application(handler)
     show(app)
+    return inputs
 
 def play_match(match_object, 
                         filtered_home_df=None, 
@@ -635,3 +637,4 @@ def play_match(match_object,
     handler = FunctionHandler(modify_doc)
     app = Application(handler)
     show(app)
+    return inputs
