@@ -76,6 +76,8 @@ def read_event_data(data_source,game_id):
     if data_source == 'metrica-sports':
         eventfile = f"/Sample_Game_{game_id}/Sample_Game_{game_id}_RawEventsData.csv"
         events = pd.read_csv('{}/{}'.format(DATADIR, eventfile)) # read data
+        events['From'] =events['Team'] +'_'+ events['From'].str.replace('Player', '')
+        events['To'] =events['Team'] +'_'+ events['To'].str.replace('Player', '')
     return events
 
 def tracking_data(data_source,game_id,teamname):
@@ -184,6 +186,10 @@ def to_single_playing_direction(home,away,events):
         columns = [c for c in tracking.columns if c[-1].lower() in ['x','y']]
         tracking.loc[second_half_idx:,columns] *= -1
     return home,away,events
+
+
+def find_players(team):
+    return np.unique( [ c.split('_')[0]+'_'+c.split('_')[1] for c in team.columns if ('x' in c.split('_') and c.split('_')[0] != 'ball') ] )
 
 # Functions below not reviewed from the original Laurie Shaw's version.
 def find_playing_direction(team,teamname):
