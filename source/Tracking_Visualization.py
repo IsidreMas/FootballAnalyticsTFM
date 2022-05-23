@@ -493,6 +493,8 @@ def play_match(match_object,
     frame_home = match_object.tracking_home.iloc[[0]]
     frame_home.columns = frame_home.columns.str.rsplit(r'_', 1, expand=True)
     home_df = frame_home.stack(0).droplevel(0).filter(like="Home", axis=0)
+    home_away_df = frame_home.stack(0).droplevel(0).filter(like="Away", axis=0)
+    home_away_df['player'] = home_away_df.index.str.split("_").str[1]
     home_df['player'] = home_df.index.str.split("_").str[1]
     home_df['end_vx'] = home_df['vx']+home_df['x']
     home_df['end_vy'] = home_df['vy']+home_df['y']
@@ -500,15 +502,21 @@ def play_match(match_object,
     frame_away = match_object.tracking_away.iloc[[0]]
     frame_away.columns = frame_away.columns.str.rsplit(r'_', 1, expand=True)
     away_df = frame_away.stack(0).droplevel(0).filter(like="Away", axis=0)
+    away_home_df = frame_away.stack(0).droplevel(0).filter(like="Home", axis=0)
+    away_home_df['player'] = away_home_df.index.str.split("_").str[1]
     away_df['player'] = away_df.index.str.split("_").str[1]
     away_df['end_vx'] = away_df['vx']+away_df['x']
     away_df['end_vy'] = away_df['vy']+away_df['y']
 
-    ball_df = frame_home.stack(0).droplevel(0).filter(like="ball", axis=0)
+    ball_home_df = frame_home.stack(0).droplevel(0).filter(like="ball", axis=0)
+    ball_away_df = frame_away.stack(0).droplevel(0).filter(like="ball", axis=0)
 
     sources_home = ColumnDataSource(data = home_df.to_dict('series'))
     sources_away = ColumnDataSource(data = away_df.to_dict('series'))
-    sources_ball = ColumnDataSource(data = ball_df.to_dict('series'))
+    sources_home_away = ColumnDataSource(data = home_away_df.to_dict('series'))
+    sources_away_home = ColumnDataSource(data = away_home_df.to_dict('series'))
+    sources_home_ball = ColumnDataSource(data = ball_home_df.to_dict('series'))
+    sources_away_ball = ColumnDataSource(data = ball_away_df.to_dict('series'))
 
     sources_events = ColumnDataSource(time_window(match_object.events, 0-200, 0+200, frame=True).to_dict("Series"))
 
@@ -526,10 +534,16 @@ def play_match(match_object,
     
     renderer1 = plot.circle('x', 'y', source=sources_away, alpha=0.5, size = 15, color = match_object.away_color)
     renderer2 = plot.circle('x', 'y', source=sources_home, alpha=0.5, size = 15, color = match_object.home_color)
-    renderer3 = plot.circle('x', 'y', source=sources_ball, alpha=0.5, size = 5, color = "black")
+    renderer3 = plot.circle('x', 'y', source=sources_home_ball, alpha=0.5, size = 5, color = "black")
     norm_home_render = norm_plot_home.circle('normx', 'normy', source=sources_home, alpha=0.5, size = 15, color = match_object.home_color)
     norm_away_render = norm_plot_away.circle('normx', 'normy', source=sources_away, alpha=0.5, size = 15, color = match_object.away_color)
-    taptool.renderers = [renderer1, renderer2, renderer3, norm_home_render, norm_away_render]
+    norm_home_away_render = norm_plot_home.circle('normx', 'normy', source=sources_home_away, alpha=0.5, size = 15, color = match_object.away_color)
+    norm_away_home_render = norm_plot_away.circle('normx', 'normy', source=sources_away_home, alpha=0.5, size = 15, color = match_object.home_color)
+    norm_ball_home_render = norm_plot_home.circle('normx', 'normy', source=sources_home_ball, alpha=0.5, size = 15, color = "black")
+    norm_ball_away_render = norm_plot_away.circle('normx', 'normy', source=sources_away_ball, alpha=0.5, size = 15, color = "black")
+    taptool.renderers = [renderer1, renderer2, renderer3, norm_home_render, 
+                         norm_away_render, norm_ball_home_render, norm_ball_away_render,
+                         norm_home_away_render, norm_away_home_render]
 
     plot.segment(x0="x", y0="y", x1="end_vx", y1="end_vy", line_color=match_object.home_color, source=sources_home, line_width=3)
     plot.segment(x0="x", y0="y", x1="end_vx", y1="end_vy", line_color=match_object.away_color, source=sources_away, line_width=3)
@@ -550,10 +564,19 @@ def play_match(match_object,
     labels_away_norm = LabelSet(x='normx', y='normy', text='player',
                             source=sources_away, text_color = "white",
                             text_font_size = "10px", text_baseline="middle", text_align="center")
+    labels_home_away_norm = LabelSet(x='normx', y='normy', text='player',
+                            source=sources_home_away, text_color = "white",
+                            text_font_size = "10px",
+                            text_baseline="middle", text_align="center")
+    labels_away_home_norm = LabelSet(x='normx', y='normy', text='player',
+                            source=sources_away_home, text_color = "white",
+                            text_font_size = "10px", text_baseline="middle", text_align="center")
     plot.add_layout(labels_home)
     plot.add_layout(labels_away)
     norm_plot_home.add_layout(labels_home_norm)
     norm_plot_away.add_layout(labels_away_norm)
+    norm_plot_home.add_layout(labels_home_away_norm)
+    norm_plot_away.add_layout(labels_away_home_norm)
 
     def update_data(attrname, old, new):
         k = int(freq.value)
@@ -561,6 +584,8 @@ def play_match(match_object,
         frame_home = match_object.tracking_home.iloc[[k]]
         frame_home.columns = frame_home.columns.str.rsplit(r'_', 1, expand=True)
         home_df = frame_home.stack(0).droplevel(0).filter(like="Home", axis=0)
+        home_away_df = frame_home.stack(0).droplevel(0).filter(like="Away", axis=0)
+        home_away_df['player'] = home_away_df.index.str.split("_").str[1]
         home_df['player'] = home_df.index.str.split("_").str[1]
         home_df['end_vx'] = home_df['vx']+home_df['x']
         home_df['end_vy'] = home_df['vy']+home_df['y']
@@ -568,15 +593,21 @@ def play_match(match_object,
         frame_away = match_object.tracking_away.iloc[[k]]
         frame_away.columns = frame_away.columns.str.rsplit(r'_', 1, expand=True)
         away_df = frame_away.stack(0).droplevel(0).filter(like="Away", axis=0)
+        away_home_df = frame_away.stack(0).droplevel(0).filter(like="Home", axis=0)
+        away_home_df['player'] = away_home_df.index.str.split("_").str[1]
         away_df['player'] = away_df.index.str.split("_").str[1]
         away_df['end_vx'] = away_df['vx']+away_df['x']
         away_df['end_vy'] = away_df['vy']+away_df['y']
 
-        ball_df = frame_home.stack(0).droplevel(0).filter(like="ball", axis=0)                          
-        
-        sources_home.data=home_df.to_dict('series')
-        sources_away.data=away_df.to_dict('series')
-        sources_ball.data=ball_df.to_dict('series')
+        ball_home_df = frame_home.stack(0).droplevel(0).filter(like="ball", axis=0)                          
+        ball_away_df = frame_away.stack(0).droplevel(0).filter(like="ball", axis=0)
+
+        sources_home.data = home_df.to_dict('series')
+        sources_away.data = away_df.to_dict('series')
+        sources_home_ball.data = ball_home_df.to_dict('series')
+        sources_away_ball.data = ball_away_df.to_dict('series')
+        sources_home_away.data = home_away_df.to_dict('series')
+        sources_away_home.data = away_home_df.to_dict('series')
 
         time = int(frame_home['Time [s]'].iloc[0])
 

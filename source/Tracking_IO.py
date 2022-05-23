@@ -26,11 +26,13 @@ Example: function_name(data_source = 'metrica-sports')
 
 """
 
+import re
 import pandas as pd
 import csv
 import numpy as np
+import xml.etree.ElementTree as ET
 
-def read_match_data(data_source,match_id):
+def read_match_data(data_source, match_id, metadata_path, tracking_path, events_path):
 
     """
     Reads the tracking data from given data source and match identifiers and returns dataframes
@@ -46,10 +48,14 @@ def read_match_data(data_source,match_id):
     Returns:
     tracking_home, tracking_away, events: Dataframes with the tracking data read from source.
     """
-
-    tracking_home = tracking_data(data_source,match_id,'Home')
-    tracking_away = tracking_data(data_source,match_id,'Away')
-    events = read_event_data(data_source,match_id)
+    if data_source == "FCB":
+        tracking_home, tracking_away, events = read_FCB_data(metadata_path, 
+                                                             tracking_path, 
+                                                             events_path)
+    else:
+        tracking_home = tracking_data(data_source,match_id,'Home')
+        tracking_away = tracking_data(data_source,match_id,'Away')
+        events = read_event_data(data_source,match_id)
     return tracking_home,tracking_away,events
 
 def get_datadir(source):
@@ -152,7 +158,7 @@ def to_metric_coordinates(data,data_source,field_dimen=(106.,68.)):
     dataframe: Dataframe with the tracking data transformed to metric units.
     """
 
-    if data_source == 'metrica-sports':
+    if data_source in ['metrica-sports', 'FCB']:
         x_columns = [c for c in data.columns if c[-1].lower()=='x']
         y_columns = [c for c in data.columns if c[-1].lower()=='y']
         data[x_columns] = ( data[x_columns]-0.5 ) * field_dimen[0]
@@ -207,3 +213,76 @@ def find_goalkeeper(team):
     x_columns = [c for c in team.columns if c[-2:].lower()=='_x' and c[:4] in ['Home','Away']]
     GK_col = team.iloc[0][x_columns].abs().idxmax(axis=1)
     return GK_col.split('_')[1]
+
+def read_FCB_data(metadata_path, tracking_data_path, events_path):
+    """
+    This function takes the path of the metadata, tracking data and event data and returns them as pandas dataframes.
+    """
+    df = pd.DataFrame()
+    df.index.name = "Frame"
+    df["Time [s]"] = np.nan
+
+    tree = ET.parse(metadata_path)
+    root = tree.getroot()
+    game_parts = root.findall('.//DataFormatSpecification')
+
+    game_parts_path = ".//Metadata/GlobalConfig/ProviderGlobalParameters/ProviderParameter/"
+    game_parts_frame = (int(root.findtext(game_parts_path + "Name[.='first_half_start']../Value")),
+                        int(root.findtext(game_parts_path + "Name[.='first_half_end']../Value")),
+                        int(root.findtext(game_parts_path + "Name[.='second_half_start']../Value")),
+                        int(root.findtext(game_parts_path + "Name[.='second_half_end']../Value")))
+
+    framerate = float(root.findtext(".//Metadata/GlobalConfig/FrameRate"))
+
+    # Open file
+
+    file = open(tracking_data_path, mode="r")
+    line = file.readline().split(":") 
+
+    part = 0
+    end_frame = int(game_parts[part].attrib['endFrame'])
+    players_data_format = game_parts[part].getchildren()[1].getchildren()
+    shirts = [int(player.getchildren()[0].attrib['playerChannelId'].split("_")[0].strip("player")) for player in players_data_format]
+    shirts.sort()
+    home_shirts = shirts[:11]
+    away_shirts = shirts[11:]
+
+    while line[0] is not '\n':
+        frame = int(line[0])
+        if frame <= game_parts_frame[2]:
+            df.loc[frame, "Period"] = 1
+        else:
+            df.loc[frame, "Period"] = 2
+
+        if frame < end_frame:
+            players_data = line[1].split(";")
+            for index, player in enumerate(players_data_format):
+                fields = player.getchildren()
+                for index_field, field in enumerate(fields[:2]):
+                    player_data = players_data[index].split(",")
+                    shirt_number = field.attrib['playerChannelId'].split("_")[0].strip("player")
+                    if int(shirt_number) in home_shirts:
+                        df.loc[frame, field.attrib['playerChannelId'].replace("player", "Home_")] = float(player_data[index_field])
+                    elif int(shirt_number) in away_shirts:
+                        df.loc[frame, field.attrib['playerChannelId'].replace("player", "Away_")] = float(player_data[index_field])
+
+            ball_data = line[2].split(',')
+            df.loc[frame, 'ball_x'] = float(ball_data[0])
+            df.loc[frame, 'ball_y'] = float(ball_data[1])
+        else:
+            part+=1
+            end_frame = int(game_parts[part].attrib['endFrame'])
+            players_data_format = game_parts[part].getchildren()[1].getchildren()
+            shirts = [int(player.getchildren()[0].attrib['playerChannelId'].split("_")[0].strip("player")) for player in players_data_format]
+            shirts.sort()
+            home_shirts = shirts[:11]
+            away_shirts = shirts[11:]
+        line = file.readline().split(":") 
+
+    df["Time [s]"] = df.index*1/framerate
+    home_tracking = df.loc[:,~df.columns.str.startswith('Away')]
+    away_tracking = df.loc[:,~df.columns.str.startswith('Home')]
+    
+    events=df
+    
+    return home_tracking, away_tracking, events

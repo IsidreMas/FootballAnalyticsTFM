@@ -21,23 +21,33 @@ from Tracking_Filters import filter_dead_time
 class Match:
   def __init__(self, 
               data_source, 
-              match_id, 
+              match_id=None, 
               name=None, 
               field_dimen=FIELD_DIMENSIONS, 
               home_color="red", 
               away_color="blue", 
               preprocess=True, 
-              verbose = True):
+              verbose = True,
+              metadata_path=None,
+              tracking_path=None,
+              events_path=None):
+    if match_id:
+      self.match_id = match_id
+    else:
+      self.match_id = 0
     if name:
       self.name = name
     else:
-      self.name = str(match_id)
+      self.name = str(self.match_id)
     self.data_source = data_source
-    self.match_id = match_id
     self.field_dimen = field_dimen
     if verbose:
       print(f"Initializing match: {self.name}\n")
-    self.read_match_data(data_source=self.data_source, match_id=self.match_id)
+    self.read_match_data(data_source=self.data_source, 
+                         match_id=self.match_id,
+                         metadata_path = metadata_path,
+                         tracking_path = tracking_path,
+                         events_path = events_path)
     self.preprocessed = False
     self.home_players = io.find_players(self.tracking_home)
     self.away_players = io.find_players(self.tracking_away)
@@ -60,11 +70,11 @@ class Match:
       self.calculate_player_velocities()
       self.calculate_player_normals()
       self.preprocessed = True
-      self.dead_time_steps = filter_dead_time(self)
+      #self.dead_time_steps = filter_dead_time(self)
       print('Match preprocessed successfully.\n')
     return self
   
-  def read_match_data(self, data_source, match_id):
+  def read_match_data(self, data_source, match_id, metadata_path, tracking_path, events_path):
     """
     Reads the tracking data from given data source and match identifiers and defines atributte dataframes
     for the home team, away team and events.
@@ -79,7 +89,11 @@ class Match:
     Defines:
     self.tracking_home, self.tracking_away, self.events: Dataframes with the tracking data read from source.
     """
-    self.tracking_home, self.tracking_away, self.events = io.read_match_data(data_source, match_id)
+    self.tracking_home, self.tracking_away, self.events = io.read_match_data(data_source, 
+                                                                             match_id, 
+                                                                             metadata_path, 
+                                                                             tracking_path, 
+                                                                             events_path)
   
   
   def calculate_player_velocities(self):
