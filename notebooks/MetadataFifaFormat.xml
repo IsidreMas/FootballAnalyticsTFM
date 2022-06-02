@@ -1,0 +1,2280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<main xmlns:tns="FIFADataTransferFormatEPTSNamespace/FIFADataTransferFormatEPTS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="FIFADataTransferFormatEPTSNamespace/FIFADataTransferFormatEPTS FIFADataTransferFormatEPTS.xsd">
+   <Metadata>
+      <GlobalConfig>
+         <FileDate></FileDate>
+         <FileName></FileName>
+         <TrackingType></TrackingType>
+         <ProviderName></ProviderName>
+         <FrameRate>25</FrameRate>
+         <ProviderGlobalParameters>
+            <ProviderParameter>
+               <Name>first_half_start</Name>
+               <Value>85</Value>
+            </ProviderParameter>
+            <ProviderParameter>
+               <Name>first_half_end</Name>
+               <Value>70537</Value>
+            </ProviderParameter>
+            <ProviderParameter>
+               <Name>second_half_start</Name>
+               <Value>71365</Value>
+            </ProviderParameter>
+            <ProviderParameter>
+               <Name>second_half_end</Name>
+               <Value>143664</Value>
+            </ProviderParameter>
+            <ProviderParameter>
+               <Name>first_extra_half_start</Name>
+               <Value/>
+            </ProviderParameter>
+            <ProviderParameter>
+               <Name>first_extra_half_end</Name>
+               <Value/>
+            </ProviderParameter>
+            <ProviderParameter>
+               <Name>second_extra_half_start</Name>
+               <Value/>
+            </ProviderParameter>
+            <ProviderParameter>
+               <Name>second_extra_half_end</Name>
+               <Value/>
+            </ProviderParameter>
+         </ProviderGlobalParameters>
+      </GlobalConfig>
+      <Sessions>
+         <Session>
+            <SessionType></SessionType>
+            <Start></Start>
+            <MatchParameters>
+               <Score>
+                  <LocalTeamScore></LocalTeamScore>
+                  <VisitingTeamScore></VisitingTeamScore>
+               </Score>
+            </MatchParameters>
+            <FieldSize>
+               <Width>105</Width>
+               <Height>68</Height>
+            </FieldSize>
+            <Competition></Competition>
+            <ProviderSessionParameters>
+               <ProviderParameter>
+                  <Name></Name>
+                  <Value></Value>
+               </ProviderParameter>
+            </ProviderSessionParameters>
+         </Session>
+      </Sessions>
+      <Teams>
+         <Team>
+            <Name></Name>
+            <ProviderTeamsParameters>
+               <ProviderParameter>
+                  <Name>attack_direction_first_half</Name>
+                  <Value>left_to_right</Value>
+               </ProviderParameter>
+            </ProviderTeamsParameters>
+         </Team>
+         <Team>
+            <Name></Name>
+            <ProviderTeamsParameters>
+               <ProviderParameter>
+                  <Name>attack_direction_first_half</Name>
+                  <Value>right_to_left</Value>
+               </ProviderParameter>
+            </ProviderTeamsParameters>
+         </Team>
+      </Teams>
+      <Players>
+         <Player>
+            <Name></Name>
+            <ShirtNumber></ShirtNumber>
+            <ProviderPlayerParameters>
+               <ProviderParameter>
+                  <Name>position_type</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_index</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_x</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_y</Name>
+                  <Value></Value>
+               </ProviderParameter>
+            </ProviderPlayerParameters>
+         </Player>
+         <Player>
+            <Name></Name>
+            <ShirtNumber></ShirtNumber>
+            <ProviderPlayerParameters>
+               <ProviderParameter>
+                  <Name>position_type</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_index</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_x</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_y</Name>
+                  <Value></Value>
+               </ProviderParameter>
+            </ProviderPlayerParameters>
+         </Player>
+                  <Player>
+            <Name></Name>
+            <ShirtNumber></ShirtNumber>
+            <ProviderPlayerParameters>
+               <ProviderParameter>
+                  <Name>position_type</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_index</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_x</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_y</Name>
+                  <Value></Value>
+               </ProviderParameter>
+            </ProviderPlayerParameters>
+         </Player>
+         <Player>
+            <Name></Name>
+            <ShirtNumber></ShirtNumber>
+            <ProviderPlayerParameters>
+               <ProviderParameter>
+                  <Name>position_type</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_index</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_x</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_y</Name>
+                  <Value></Value>
+               </ProviderParameter>
+            </ProviderPlayerParameters>
+         </Player>
+         
+         <Player>
+            <Name></Name>
+            <ShirtNumber></ShirtNumber>
+            <ProviderPlayerParameters>
+               <ProviderParameter>
+                  <Name>position_type</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_index</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_x</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_y</Name>
+                  <Value></Value>
+               </ProviderParameter>
+            </ProviderPlayerParameters>
+         </Player>
+         <Player>
+            <Name></Name>
+            <ShirtNumber></ShirtNumber>
+            <ProviderPlayerParameters>
+               <ProviderParameter>
+                  <Name>position_type</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_index</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_x</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_y</Name>
+                  <Value></Value>
+               </ProviderParameter>
+            </ProviderPlayerParameters>
+         </Player>
+                  <Player>
+            <Name></Name>
+            <ShirtNumber></ShirtNumber>
+            <ProviderPlayerParameters>
+               <ProviderParameter>
+                  <Name>position_type</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_index</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_x</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_y</Name>
+                  <Value></Value>
+               </ProviderParameter>
+            </ProviderPlayerParameters>
+         </Player>
+         <Player>
+            <Name></Name>
+            <ShirtNumber></ShirtNumber>
+            <ProviderPlayerParameters>
+               <ProviderParameter>
+                  <Name>position_type</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_index</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_x</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_y</Name>
+                  <Value></Value>
+               </ProviderParameter>
+            </ProviderPlayerParameters>
+         </Player>
+                  <Player>
+            <Name></Name>
+            <ShirtNumber></ShirtNumber>
+            <ProviderPlayerParameters>
+               <ProviderParameter>
+                  <Name>position_type</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_index</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_x</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_y</Name>
+                  <Value></Value>
+               </ProviderParameter>
+            </ProviderPlayerParameters>
+         </Player>
+         <Player>
+            <Name></Name>
+            <ShirtNumber></ShirtNumber>
+            <ProviderPlayerParameters>
+               <ProviderParameter>
+                  <Name>position_type</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_index</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_x</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_y</Name>
+                  <Value></Value>
+               </ProviderParameter>
+            </ProviderPlayerParameters>
+         </Player>
+                  <Player>
+            <Name></Name>
+            <ShirtNumber></ShirtNumber>
+            <ProviderPlayerParameters>
+               <ProviderParameter>
+                  <Name>position_type</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_index</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_x</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_y</Name>
+                  <Value></Value>
+               </ProviderParameter>
+            </ProviderPlayerParameters>
+         </Player>
+         <Player>
+            <Name></Name>
+            <ShirtNumber></ShirtNumber>
+            <ProviderPlayerParameters>
+               <ProviderParameter>
+                  <Name>position_type</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_index</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_x</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_y</Name>
+                  <Value></Value>
+               </ProviderParameter>
+            </ProviderPlayerParameters>
+         </Player>
+         
+         <Player>
+            <Name></Name>
+            <ShirtNumber></ShirtNumber>
+            <ProviderPlayerParameters>
+               <ProviderParameter>
+                  <Name>position_type</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_index</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_x</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_y</Name>
+                  <Value></Value>
+               </ProviderParameter>
+            </ProviderPlayerParameters>
+         </Player>
+         <Player>
+            <Name></Name>
+            <ShirtNumber></ShirtNumber>
+            <ProviderPlayerParameters>
+               <ProviderParameter>
+                  <Name>position_type</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_index</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_x</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_y</Name>
+                  <Value></Value>
+               </ProviderParameter>
+            </ProviderPlayerParameters>
+         </Player>
+                  <Player>
+            <Name></Name>
+            <ShirtNumber></ShirtNumber>
+            <ProviderPlayerParameters>
+               <ProviderParameter>
+                  <Name>position_type</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_index</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_x</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_y</Name>
+                  <Value></Value>
+               </ProviderParameter>
+            </ProviderPlayerParameters>
+         </Player>
+         <Player>
+            <Name></Name>
+            <ShirtNumber></ShirtNumber>
+            <ProviderPlayerParameters>
+               <ProviderParameter>
+                  <Name>position_type</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_index</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_x</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_y</Name>
+                  <Value></Value>
+               </ProviderParameter>
+            </ProviderPlayerParameters>
+         </Player>
+                  <Player>
+            <Name></Name>
+            <ShirtNumber></ShirtNumber>
+            <ProviderPlayerParameters>
+               <ProviderParameter>
+                  <Name>position_type</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_index</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_x</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_y</Name>
+                  <Value></Value>
+               </ProviderParameter>
+            </ProviderPlayerParameters>
+         </Player>
+         <Player>
+            <Name></Name>
+            <ShirtNumber></ShirtNumber>
+            <ProviderPlayerParameters>
+               <ProviderParameter>
+                  <Name>position_type</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_index</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_x</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_y</Name>
+                  <Value></Value>
+               </ProviderParameter>
+            </ProviderPlayerParameters>
+         </Player>
+                  <Player>
+            <Name></Name>
+            <ShirtNumber></ShirtNumber>
+            <ProviderPlayerParameters>
+               <ProviderParameter>
+                  <Name>position_type</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_index</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_x</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_y</Name>
+                  <Value></Value>
+               </ProviderParameter>
+            </ProviderPlayerParameters>
+         </Player>
+         <Player>
+            <Name></Name>
+            <ShirtNumber></ShirtNumber>
+            <ProviderPlayerParameters>
+               <ProviderParameter>
+                  <Name>position_type</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_index</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_x</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_y</Name>
+                  <Value></Value>
+               </ProviderParameter>
+            </ProviderPlayerParameters>
+         </Player>
+         
+         <Player>
+            <Name></Name>
+            <ShirtNumber></ShirtNumber>
+            <ProviderPlayerParameters>
+               <ProviderParameter>
+                  <Name>position_type</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_index</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_x</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_y</Name>
+                  <Value></Value>
+               </ProviderParameter>
+            </ProviderPlayerParameters>
+         </Player>
+         <Player>
+            <Name></Name>
+            <ShirtNumber></ShirtNumber>
+            <ProviderPlayerParameters>
+               <ProviderParameter>
+                  <Name>position_type</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_index</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_x</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_y</Name>
+                  <Value></Value>
+               </ProviderParameter>
+            </ProviderPlayerParameters>
+         </Player>
+                  <Player>
+            <Name></Name>
+            <ShirtNumber></ShirtNumber>
+            <ProviderPlayerParameters>
+               <ProviderParameter>
+                  <Name>position_type</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_index</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_x</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_y</Name>
+                  <Value></Value>
+               </ProviderParameter>
+            </ProviderPlayerParameters>
+         </Player>
+         <Player>
+            <Name></Name>
+            <ShirtNumber></ShirtNumber>
+            <ProviderPlayerParameters>
+               <ProviderParameter>
+                  <Name>position_type</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_index</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_x</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_y</Name>
+                  <Value></Value>
+               </ProviderParameter>
+            </ProviderPlayerParameters>
+         </Player>
+         <Player>
+            <Name></Name>
+            <ShirtNumber></ShirtNumber>
+            <ProviderPlayerParameters>
+               <ProviderParameter>
+                  <Name>position_type</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_index</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_x</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_y</Name>
+                  <Value></Value>
+               </ProviderParameter>
+            </ProviderPlayerParameters>
+         </Player>
+         <Player>
+            <Name></Name>
+            <ShirtNumber></ShirtNumber>
+            <ProviderPlayerParameters>
+               <ProviderParameter>
+                  <Name>position_type</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_index</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_x</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_y</Name>
+                  <Value></Value>
+               </ProviderParameter>
+            </ProviderPlayerParameters>
+         </Player>
+         <Player>
+            <Name></Name>
+            <ShirtNumber></ShirtNumber>
+            <ProviderPlayerParameters>
+               <ProviderParameter>
+                  <Name>position_type</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_index</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_x</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_y</Name>
+                  <Value></Value>
+               </ProviderParameter>
+            </ProviderPlayerParameters>
+         </Player>
+         <Player>
+            <Name></Name>
+            <ShirtNumber></ShirtNumber>
+            <ProviderPlayerParameters>
+               <ProviderParameter>
+                  <Name>position_type</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_index</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_x</Name>
+                  <Value></Value>
+               </ProviderParameter>
+               <ProviderParameter>
+                  <Name>position_y</Name>
+                  <Value></Value>
+               </ProviderParameter>
+            </ProviderPlayerParameters>
+         </Player>
+      </Players>
+      <Devices>
+         <Device id="device1">
+            <Name>Device 1</Name>
+            <Sensors>
+               <Sensor id="position">
+                  <Name>Position</Name>
+                  <Channels>
+                     <Channel id="x">
+                        <Name>position_x</Name>
+                        <Unit>normalized</Unit>
+                     </Channel>
+                     <Channel id="y">
+                        <Name>position_y</Name>
+                        <Unit>normalized</Unit>
+                     </Channel>
+                  </Channels>
+               </Sensor>
+               <Sensor id="position_pixels">
+                  <Name>Position in Pixels</Name>
+                  <Channels>
+                     <Channel id="px">
+                        <Name>position_pixels_x</Name>
+                        <Unit>normalized</Unit>
+                     </Channel>
+                     <Channel id="py">
+                        <Name>position_pixels_y</Name>
+                        <Unit>normalized</Unit>
+                     </Channel>
+                  </Channels>
+               </Sensor>
+            </Sensors>
+         </Device>
+      </Devices>
+      <PlayerChannels>
+         <PlayerChannel channelId="x" id="player1_x" playerId="P2079"/>
+         <PlayerChannel channelId="y" id="player1_y" playerId="P2079"/>
+         <PlayerChannel channelId="px" id="player1_top_left_x" playerId="P2079"/>
+         <PlayerChannel channelId="py" id="player1_top_left_y" playerId="P2079"/>
+         <PlayerChannel channelId="px" id="player1_bottom_right_x" playerId="P2079"/>
+         <PlayerChannel channelId="py" id="player1_bottom_right_y" playerId="P2079"/>
+         <PlayerChannel channelId="x" id="player2_x" playerId="P2088"/>
+         <PlayerChannel channelId="y" id="player2_y" playerId="P2088"/>
+         <PlayerChannel channelId="px" id="player2_top_left_x" playerId="P2088"/>
+         <PlayerChannel channelId="py" id="player2_top_left_y" playerId="P2088"/>
+         <PlayerChannel channelId="px" id="player2_bottom_right_x" playerId="P2088"/>
+         <PlayerChannel channelId="py" id="player2_bottom_right_y" playerId="P2088"/>
+         <PlayerChannel channelId="x" id="player3_x" playerId="P2082"/>
+         <PlayerChannel channelId="y" id="player3_y" playerId="P2082"/>
+         <PlayerChannel channelId="px" id="player3_top_left_x" playerId="P2082"/>
+         <PlayerChannel channelId="py" id="player3_top_left_y" playerId="P2082"/>
+         <PlayerChannel channelId="px" id="player3_bottom_right_x" playerId="P2082"/>
+         <PlayerChannel channelId="py" id="player3_bottom_right_y" playerId="P2082"/>
+         <PlayerChannel channelId="x" id="player4_x" playerId="P2083"/>
+         <PlayerChannel channelId="y" id="player4_y" playerId="P2083"/>
+         <PlayerChannel channelId="px" id="player4_top_left_x" playerId="P2083"/>
+         <PlayerChannel channelId="py" id="player4_top_left_y" playerId="P2083"/>
+         <PlayerChannel channelId="px" id="player4_bottom_right_x" playerId="P2083"/>
+         <PlayerChannel channelId="py" id="player4_bottom_right_y" playerId="P2083"/>
+         <PlayerChannel channelId="x" id="player5_x" playerId="P2085"/>
+         <PlayerChannel channelId="y" id="player5_y" playerId="P2085"/>
+         <PlayerChannel channelId="px" id="player5_top_left_x" playerId="P2085"/>
+         <PlayerChannel channelId="py" id="player5_top_left_y" playerId="P2085"/>
+         <PlayerChannel channelId="px" id="player5_bottom_right_x" playerId="P2085"/>
+         <PlayerChannel channelId="py" id="player5_bottom_right_y" playerId="P2085"/>
+         <PlayerChannel channelId="x" id="player6_x" playerId="P2087"/>
+         <PlayerChannel channelId="y" id="player6_y" playerId="P2087"/>
+         <PlayerChannel channelId="px" id="player6_top_left_x" playerId="P2087"/>
+         <PlayerChannel channelId="py" id="player6_top_left_y" playerId="P2087"/>
+         <PlayerChannel channelId="px" id="player6_bottom_right_x" playerId="P2087"/>
+         <PlayerChannel channelId="py" id="player6_bottom_right_y" playerId="P2087"/>
+         <PlayerChannel channelId="x" id="player7_x" playerId="P4249"/>
+         <PlayerChannel channelId="y" id="player7_y" playerId="P4249"/>
+         <PlayerChannel channelId="px" id="player7_top_left_x" playerId="P4249"/>
+         <PlayerChannel channelId="py" id="player7_top_left_y" playerId="P4249"/>
+         <PlayerChannel channelId="px" id="player7_bottom_right_x" playerId="P4249"/>
+         <PlayerChannel channelId="py" id="player7_bottom_right_y" playerId="P4249"/>
+         <PlayerChannel channelId="x" id="player8_x" playerId="P1980"/>
+         <PlayerChannel channelId="y" id="player8_y" playerId="P1980"/>
+         <PlayerChannel channelId="px" id="player8_top_left_x" playerId="P1980"/>
+         <PlayerChannel channelId="py" id="player8_top_left_y" playerId="P1980"/>
+         <PlayerChannel channelId="px" id="player8_bottom_right_x" playerId="P1980"/>
+         <PlayerChannel channelId="py" id="player8_bottom_right_y" playerId="P1980"/>
+         <PlayerChannel channelId="x" id="player9_x" playerId="P2101"/>
+         <PlayerChannel channelId="y" id="player9_y" playerId="P2101"/>
+         <PlayerChannel channelId="px" id="player9_top_left_x" playerId="P2101"/>
+         <PlayerChannel channelId="py" id="player9_top_left_y" playerId="P2101"/>
+         <PlayerChannel channelId="px" id="player9_bottom_right_x" playerId="P2101"/>
+         <PlayerChannel channelId="py" id="player9_bottom_right_y" playerId="P2101"/>
+         <PlayerChannel channelId="x" id="player10_x" playerId="P2097"/>
+         <PlayerChannel channelId="y" id="player10_y" playerId="P2097"/>
+         <PlayerChannel channelId="px" id="player10_top_left_x" playerId="P2097"/>
+         <PlayerChannel channelId="py" id="player10_top_left_y" playerId="P2097"/>
+         <PlayerChannel channelId="px" id="player10_bottom_right_x" playerId="P2097"/>
+         <PlayerChannel channelId="py" id="player10_bottom_right_y" playerId="P2097"/>
+         <PlayerChannel channelId="x" id="player11_x" playerId="P2100"/>
+         <PlayerChannel channelId="y" id="player11_y" playerId="P2100"/>
+         <PlayerChannel channelId="px" id="player11_top_left_x" playerId="P2100"/>
+         <PlayerChannel channelId="py" id="player11_top_left_y" playerId="P2100"/>
+         <PlayerChannel channelId="px" id="player11_bottom_right_x" playerId="P2100"/>
+         <PlayerChannel channelId="py" id="player11_bottom_right_y" playerId="P2100"/>
+         <PlayerChannel channelId="x" id="player12_x" playerId="P2089"/>
+         <PlayerChannel channelId="y" id="player12_y" playerId="P2089"/>
+         <PlayerChannel channelId="px" id="player12_top_left_x" playerId="P2089"/>
+         <PlayerChannel channelId="py" id="player12_top_left_y" playerId="P2089"/>
+         <PlayerChannel channelId="px" id="player12_bottom_right_x" playerId="P2089"/>
+         <PlayerChannel channelId="py" id="player12_bottom_right_y" playerId="P2089"/>
+         <PlayerChannel channelId="x" id="player13_x" playerId="P2095"/>
+         <PlayerChannel channelId="y" id="player13_y" playerId="P2095"/>
+         <PlayerChannel channelId="px" id="player13_top_left_x" playerId="P2095"/>
+         <PlayerChannel channelId="py" id="player13_top_left_y" playerId="P2095"/>
+         <PlayerChannel channelId="px" id="player13_bottom_right_x" playerId="P2095"/>
+         <PlayerChannel channelId="py" id="player13_bottom_right_y" playerId="P2095"/>
+         <PlayerChannel channelId="x" id="player14_x" playerId="P4250"/>
+         <PlayerChannel channelId="y" id="player14_y" playerId="P4250"/>
+         <PlayerChannel channelId="px" id="player14_top_left_x" playerId="P4250"/>
+         <PlayerChannel channelId="py" id="player14_top_left_y" playerId="P4250"/>
+         <PlayerChannel channelId="px" id="player14_bottom_right_x" playerId="P4250"/>
+         <PlayerChannel channelId="py" id="player14_bottom_right_y" playerId="P4250"/>
+         <PlayerChannel channelId="x" id="player15_x" playerId="P4251"/>
+         <PlayerChannel channelId="y" id="player15_y" playerId="P4251"/>
+         <PlayerChannel channelId="px" id="player15_top_left_x" playerId="P4251"/>
+         <PlayerChannel channelId="py" id="player15_top_left_y" playerId="P4251"/>
+         <PlayerChannel channelId="px" id="player15_bottom_right_x" playerId="P4251"/>
+         <PlayerChannel channelId="py" id="player15_bottom_right_y" playerId="P4251"/>
+         <PlayerChannel channelId="x" id="player16_x" playerId="P081"/>
+         <PlayerChannel channelId="y" id="player16_y" playerId="P081"/>
+         <PlayerChannel channelId="px" id="player16_top_left_x" playerId="P081"/>
+         <PlayerChannel channelId="py" id="player16_top_left_y" playerId="P081"/>
+         <PlayerChannel channelId="px" id="player16_bottom_right_x" playerId="P081"/>
+         <PlayerChannel channelId="py" id="player16_bottom_right_y" playerId="P081"/>
+         <PlayerChannel channelId="x" id="player17_x" playerId="P3959"/>
+         <PlayerChannel channelId="y" id="player17_y" playerId="P3959"/>
+         <PlayerChannel channelId="px" id="player17_top_left_x" playerId="P3959"/>
+         <PlayerChannel channelId="py" id="player17_top_left_y" playerId="P3959"/>
+         <PlayerChannel channelId="px" id="player17_bottom_right_x" playerId="P3959"/>
+         <PlayerChannel channelId="py" id="player17_bottom_right_y" playerId="P3959"/>
+         <PlayerChannel channelId="x" id="player18_x" playerId="P2696"/>
+         <PlayerChannel channelId="y" id="player18_y" playerId="P2696"/>
+         <PlayerChannel channelId="px" id="player18_top_left_x" playerId="P2696"/>
+         <PlayerChannel channelId="py" id="player18_top_left_y" playerId="P2696"/>
+         <PlayerChannel channelId="px" id="player18_bottom_right_x" playerId="P2696"/>
+         <PlayerChannel channelId="py" id="player18_bottom_right_y" playerId="P2696"/>
+         <PlayerChannel channelId="x" id="player19_x" playerId="P2299"/>
+         <PlayerChannel channelId="y" id="player19_y" playerId="P2299"/>
+         <PlayerChannel channelId="px" id="player19_top_left_x" playerId="P2299"/>
+         <PlayerChannel channelId="py" id="player19_top_left_y" playerId="P2299"/>
+         <PlayerChannel channelId="px" id="player19_bottom_right_x" playerId="P2299"/>
+         <PlayerChannel channelId="py" id="player19_bottom_right_y" playerId="P2299"/>
+         <PlayerChannel channelId="x" id="player20_x" playerId="P029"/>
+         <PlayerChannel channelId="y" id="player20_y" playerId="P029"/>
+         <PlayerChannel channelId="px" id="player20_top_left_x" playerId="P029"/>
+         <PlayerChannel channelId="py" id="player20_top_left_y" playerId="P029"/>
+         <PlayerChannel channelId="px" id="player20_bottom_right_x" playerId="P029"/>
+         <PlayerChannel channelId="py" id="player20_bottom_right_y" playerId="P029"/>
+         <PlayerChannel channelId="x" id="player21_x" playerId="P2695"/>
+         <PlayerChannel channelId="y" id="player21_y" playerId="P2695"/>
+         <PlayerChannel channelId="px" id="player21_top_left_x" playerId="P2695"/>
+         <PlayerChannel channelId="py" id="player21_top_left_y" playerId="P2695"/>
+         <PlayerChannel channelId="px" id="player21_bottom_right_x" playerId="P2695"/>
+         <PlayerChannel channelId="py" id="player21_bottom_right_y" playerId="P2695"/>
+         <PlayerChannel channelId="x" id="player22_x" playerId="P031"/>
+         <PlayerChannel channelId="y" id="player22_y" playerId="P031"/>
+         <PlayerChannel channelId="px" id="player22_top_left_x" playerId="P031"/>
+         <PlayerChannel channelId="py" id="player22_top_left_y" playerId="P031"/>
+         <PlayerChannel channelId="px" id="player22_bottom_right_x" playerId="P031"/>
+         <PlayerChannel channelId="py" id="player22_bottom_right_y" playerId="P031"/>
+         <PlayerChannel channelId="x" id="player23_x" playerId="P3832"/>
+         <PlayerChannel channelId="y" id="player23_y" playerId="P3832"/>
+         <PlayerChannel channelId="px" id="player23_top_left_x" playerId="P3832"/>
+         <PlayerChannel channelId="py" id="player23_top_left_y" playerId="P3832"/>
+         <PlayerChannel channelId="px" id="player23_bottom_right_x" playerId="P3832"/>
+         <PlayerChannel channelId="py" id="player23_bottom_right_y" playerId="P3832"/>
+         <PlayerChannel channelId="x" id="player24_x" playerId="P2186"/>
+         <PlayerChannel channelId="y" id="player24_y" playerId="P2186"/>
+         <PlayerChannel channelId="px" id="player24_top_left_x" playerId="P2186"/>
+         <PlayerChannel channelId="py" id="player24_top_left_y" playerId="P2186"/>
+         <PlayerChannel channelId="px" id="player24_bottom_right_x" playerId="P2186"/>
+         <PlayerChannel channelId="py" id="player24_bottom_right_y" playerId="P2186"/>
+         <PlayerChannel channelId="x" id="player25_x" playerId="P033"/>
+         <PlayerChannel channelId="y" id="player25_y" playerId="P033"/>
+         <PlayerChannel channelId="px" id="player25_top_left_x" playerId="P033"/>
+         <PlayerChannel channelId="py" id="player25_top_left_y" playerId="P033"/>
+         <PlayerChannel channelId="px" id="player25_bottom_right_x" playerId="P033"/>
+         <PlayerChannel channelId="py" id="player25_bottom_right_y" playerId="P033"/>
+         <PlayerChannel channelId="x" id="player26_x" playerId="P1907"/>
+         <PlayerChannel channelId="y" id="player26_y" playerId="P1907"/>
+         <PlayerChannel channelId="px" id="player26_top_left_x" playerId="P1907"/>
+         <PlayerChannel channelId="py" id="player26_top_left_y" playerId="P1907"/>
+         <PlayerChannel channelId="px" id="player26_bottom_right_x" playerId="P1907"/>
+         <PlayerChannel channelId="py" id="player26_bottom_right_y" playerId="P1907"/>
+         <PlayerChannel channelId="x" id="player27_x" playerId="P282"/>
+         <PlayerChannel channelId="y" id="player27_y" playerId="P282"/>
+         <PlayerChannel channelId="px" id="player27_top_left_x" playerId="P282"/>
+         <PlayerChannel channelId="py" id="player27_top_left_y" playerId="P282"/>
+         <PlayerChannel channelId="px" id="player27_bottom_right_x" playerId="P282"/>
+         <PlayerChannel channelId="py" id="player27_bottom_right_y" playerId="P282"/>
+         <PlayerChannel channelId="x" id="player28_x" playerId="P2377"/>
+         <PlayerChannel channelId="y" id="player28_y" playerId="P2377"/>
+         <PlayerChannel channelId="px" id="player28_top_left_x" playerId="P2377"/>
+         <PlayerChannel channelId="py" id="player28_top_left_y" playerId="P2377"/>
+         <PlayerChannel channelId="px" id="player28_bottom_right_x" playerId="P2377"/>
+         <PlayerChannel channelId="py" id="player28_bottom_right_y" playerId="P2377"/>
+      </PlayerChannels>
+   </Metadata>
+   <DataFormatSpecifications>
+      <DataFormatSpecification endFrame="46556" separator=":" startFrame="1">
+         <StringRegister name="frameCount"/>
+         <SplitRegister separator=";">
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player1_x"/>
+               <PlayerChannelRef playerChannelId="player1_y"/>
+               <PlayerChannelRef playerChannelId="player1_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player1_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player1_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player1_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player2_x"/>
+               <PlayerChannelRef playerChannelId="player2_y"/>
+               <PlayerChannelRef playerChannelId="player2_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player2_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player2_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player2_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player3_x"/>
+               <PlayerChannelRef playerChannelId="player3_y"/>
+               <PlayerChannelRef playerChannelId="player3_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player3_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player3_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player3_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player4_x"/>
+               <PlayerChannelRef playerChannelId="player4_y"/>
+               <PlayerChannelRef playerChannelId="player4_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player4_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player4_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player4_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player5_x"/>
+               <PlayerChannelRef playerChannelId="player5_y"/>
+               <PlayerChannelRef playerChannelId="player5_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player5_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player5_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player5_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player6_x"/>
+               <PlayerChannelRef playerChannelId="player6_y"/>
+               <PlayerChannelRef playerChannelId="player6_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player6_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player6_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player6_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player7_x"/>
+               <PlayerChannelRef playerChannelId="player7_y"/>
+               <PlayerChannelRef playerChannelId="player7_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player7_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player7_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player7_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player8_x"/>
+               <PlayerChannelRef playerChannelId="player8_y"/>
+               <PlayerChannelRef playerChannelId="player8_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player8_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player8_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player8_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player9_x"/>
+               <PlayerChannelRef playerChannelId="player9_y"/>
+               <PlayerChannelRef playerChannelId="player9_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player9_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player9_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player9_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player10_x"/>
+               <PlayerChannelRef playerChannelId="player10_y"/>
+               <PlayerChannelRef playerChannelId="player10_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player10_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player10_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player10_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player11_x"/>
+               <PlayerChannelRef playerChannelId="player11_y"/>
+               <PlayerChannelRef playerChannelId="player11_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player11_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player11_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player11_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player16_x"/>
+               <PlayerChannelRef playerChannelId="player16_y"/>
+               <PlayerChannelRef playerChannelId="player16_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player16_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player16_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player16_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player17_x"/>
+               <PlayerChannelRef playerChannelId="player17_y"/>
+               <PlayerChannelRef playerChannelId="player17_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player17_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player17_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player17_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player18_x"/>
+               <PlayerChannelRef playerChannelId="player18_y"/>
+               <PlayerChannelRef playerChannelId="player18_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player18_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player18_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player18_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player19_x"/>
+               <PlayerChannelRef playerChannelId="player19_y"/>
+               <PlayerChannelRef playerChannelId="player19_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player19_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player19_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player19_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player20_x"/>
+               <PlayerChannelRef playerChannelId="player20_y"/>
+               <PlayerChannelRef playerChannelId="player20_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player20_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player20_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player20_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player21_x"/>
+               <PlayerChannelRef playerChannelId="player21_y"/>
+               <PlayerChannelRef playerChannelId="player21_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player21_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player21_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player21_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player22_x"/>
+               <PlayerChannelRef playerChannelId="player22_y"/>
+               <PlayerChannelRef playerChannelId="player22_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player22_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player22_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player22_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player23_x"/>
+               <PlayerChannelRef playerChannelId="player23_y"/>
+               <PlayerChannelRef playerChannelId="player23_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player23_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player23_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player23_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player24_x"/>
+               <PlayerChannelRef playerChannelId="player24_y"/>
+               <PlayerChannelRef playerChannelId="player24_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player24_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player24_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player24_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player25_x"/>
+               <PlayerChannelRef playerChannelId="player25_y"/>
+               <PlayerChannelRef playerChannelId="player25_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player25_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player25_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player25_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player26_x"/>
+               <PlayerChannelRef playerChannelId="player26_y"/>
+               <PlayerChannelRef playerChannelId="player26_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player26_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player26_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player26_bottom_right_y"/>
+            </SplitRegister>
+         </SplitRegister>
+         <SplitRegister separator=",">
+            <BallChannelRef channelId="x"/>
+            <BallChannelRef channelId="y"/>
+         </SplitRegister>
+         <SplitRegister separator=",">
+            <StringRegister name="cornerKickTopLeftX"/>
+            <StringRegister name="cornerKickTopLeftY"/>
+            <StringRegister name="cornerKickTopRightX"/>
+            <StringRegister name="cornerKickTopRightY"/>
+            <StringRegister name="cornerKickBottomRightX"/>
+            <StringRegister name="cornerKickBottomRightY"/>
+            <StringRegister name="cornerKickBottomLeftX"/>
+            <StringRegister name="cornerKickBottomLeftY"/>
+         </SplitRegister>
+      </DataFormatSpecification>
+      <DataFormatSpecification endFrame="100810" separator=":" startFrame="46557">
+         <StringRegister name="frameCount"/>
+         <SplitRegister separator=";">
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player1_x"/>
+               <PlayerChannelRef playerChannelId="player1_y"/>
+               <PlayerChannelRef playerChannelId="player1_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player1_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player1_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player1_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player2_x"/>
+               <PlayerChannelRef playerChannelId="player2_y"/>
+               <PlayerChannelRef playerChannelId="player2_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player2_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player2_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player2_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player3_x"/>
+               <PlayerChannelRef playerChannelId="player3_y"/>
+               <PlayerChannelRef playerChannelId="player3_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player3_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player3_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player3_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player4_x"/>
+               <PlayerChannelRef playerChannelId="player4_y"/>
+               <PlayerChannelRef playerChannelId="player4_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player4_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player4_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player4_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player12_x"/>
+               <PlayerChannelRef playerChannelId="player12_y"/>
+               <PlayerChannelRef playerChannelId="player12_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player12_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player12_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player12_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player6_x"/>
+               <PlayerChannelRef playerChannelId="player6_y"/>
+               <PlayerChannelRef playerChannelId="player6_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player6_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player6_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player6_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player7_x"/>
+               <PlayerChannelRef playerChannelId="player7_y"/>
+               <PlayerChannelRef playerChannelId="player7_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player7_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player7_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player7_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player8_x"/>
+               <PlayerChannelRef playerChannelId="player8_y"/>
+               <PlayerChannelRef playerChannelId="player8_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player8_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player8_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player8_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player9_x"/>
+               <PlayerChannelRef playerChannelId="player9_y"/>
+               <PlayerChannelRef playerChannelId="player9_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player9_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player9_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player9_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player10_x"/>
+               <PlayerChannelRef playerChannelId="player10_y"/>
+               <PlayerChannelRef playerChannelId="player10_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player10_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player10_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player10_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player11_x"/>
+               <PlayerChannelRef playerChannelId="player11_y"/>
+               <PlayerChannelRef playerChannelId="player11_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player11_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player11_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player11_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player16_x"/>
+               <PlayerChannelRef playerChannelId="player16_y"/>
+               <PlayerChannelRef playerChannelId="player16_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player16_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player16_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player16_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player17_x"/>
+               <PlayerChannelRef playerChannelId="player17_y"/>
+               <PlayerChannelRef playerChannelId="player17_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player17_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player17_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player17_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player18_x"/>
+               <PlayerChannelRef playerChannelId="player18_y"/>
+               <PlayerChannelRef playerChannelId="player18_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player18_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player18_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player18_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player19_x"/>
+               <PlayerChannelRef playerChannelId="player19_y"/>
+               <PlayerChannelRef playerChannelId="player19_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player19_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player19_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player19_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player20_x"/>
+               <PlayerChannelRef playerChannelId="player20_y"/>
+               <PlayerChannelRef playerChannelId="player20_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player20_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player20_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player20_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player21_x"/>
+               <PlayerChannelRef playerChannelId="player21_y"/>
+               <PlayerChannelRef playerChannelId="player21_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player21_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player21_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player21_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player22_x"/>
+               <PlayerChannelRef playerChannelId="player22_y"/>
+               <PlayerChannelRef playerChannelId="player22_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player22_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player22_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player22_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player23_x"/>
+               <PlayerChannelRef playerChannelId="player23_y"/>
+               <PlayerChannelRef playerChannelId="player23_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player23_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player23_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player23_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player24_x"/>
+               <PlayerChannelRef playerChannelId="player24_y"/>
+               <PlayerChannelRef playerChannelId="player24_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player24_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player24_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player24_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player25_x"/>
+               <PlayerChannelRef playerChannelId="player25_y"/>
+               <PlayerChannelRef playerChannelId="player25_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player25_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player25_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player25_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player26_x"/>
+               <PlayerChannelRef playerChannelId="player26_y"/>
+               <PlayerChannelRef playerChannelId="player26_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player26_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player26_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player26_bottom_right_y"/>
+            </SplitRegister>
+         </SplitRegister>
+         <SplitRegister separator=",">
+            <BallChannelRef channelId="x"/>
+            <BallChannelRef channelId="y"/>
+         </SplitRegister>
+         <SplitRegister separator=",">
+            <StringRegister name="cornerKickTopLeftX"/>
+            <StringRegister name="cornerKickTopLeftY"/>
+            <StringRegister name="cornerKickTopRightX"/>
+            <StringRegister name="cornerKickTopRightY"/>
+            <StringRegister name="cornerKickBottomRightX"/>
+            <StringRegister name="cornerKickBottomRightY"/>
+            <StringRegister name="cornerKickBottomLeftX"/>
+            <StringRegister name="cornerKickBottomLeftY"/>
+         </SplitRegister>
+      </DataFormatSpecification>
+      <DataFormatSpecification endFrame="100960" separator=":" startFrame="100811">
+         <StringRegister name="frameCount"/>
+         <SplitRegister separator=";">
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player1_x"/>
+               <PlayerChannelRef playerChannelId="player1_y"/>
+               <PlayerChannelRef playerChannelId="player1_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player1_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player1_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player1_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player2_x"/>
+               <PlayerChannelRef playerChannelId="player2_y"/>
+               <PlayerChannelRef playerChannelId="player2_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player2_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player2_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player2_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player3_x"/>
+               <PlayerChannelRef playerChannelId="player3_y"/>
+               <PlayerChannelRef playerChannelId="player3_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player3_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player3_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player3_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player4_x"/>
+               <PlayerChannelRef playerChannelId="player4_y"/>
+               <PlayerChannelRef playerChannelId="player4_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player4_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player4_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player4_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player12_x"/>
+               <PlayerChannelRef playerChannelId="player12_y"/>
+               <PlayerChannelRef playerChannelId="player12_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player12_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player12_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player12_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player6_x"/>
+               <PlayerChannelRef playerChannelId="player6_y"/>
+               <PlayerChannelRef playerChannelId="player6_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player6_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player6_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player6_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player7_x"/>
+               <PlayerChannelRef playerChannelId="player7_y"/>
+               <PlayerChannelRef playerChannelId="player7_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player7_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player7_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player7_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player13_x"/>
+               <PlayerChannelRef playerChannelId="player13_y"/>
+               <PlayerChannelRef playerChannelId="player13_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player13_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player13_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player13_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player9_x"/>
+               <PlayerChannelRef playerChannelId="player9_y"/>
+               <PlayerChannelRef playerChannelId="player9_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player9_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player9_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player9_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player10_x"/>
+               <PlayerChannelRef playerChannelId="player10_y"/>
+               <PlayerChannelRef playerChannelId="player10_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player10_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player10_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player10_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player11_x"/>
+               <PlayerChannelRef playerChannelId="player11_y"/>
+               <PlayerChannelRef playerChannelId="player11_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player11_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player11_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player11_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player16_x"/>
+               <PlayerChannelRef playerChannelId="player16_y"/>
+               <PlayerChannelRef playerChannelId="player16_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player16_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player16_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player16_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player17_x"/>
+               <PlayerChannelRef playerChannelId="player17_y"/>
+               <PlayerChannelRef playerChannelId="player17_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player17_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player17_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player17_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player18_x"/>
+               <PlayerChannelRef playerChannelId="player18_y"/>
+               <PlayerChannelRef playerChannelId="player18_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player18_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player18_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player18_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player19_x"/>
+               <PlayerChannelRef playerChannelId="player19_y"/>
+               <PlayerChannelRef playerChannelId="player19_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player19_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player19_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player19_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player20_x"/>
+               <PlayerChannelRef playerChannelId="player20_y"/>
+               <PlayerChannelRef playerChannelId="player20_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player20_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player20_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player20_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player21_x"/>
+               <PlayerChannelRef playerChannelId="player21_y"/>
+               <PlayerChannelRef playerChannelId="player21_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player21_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player21_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player21_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player22_x"/>
+               <PlayerChannelRef playerChannelId="player22_y"/>
+               <PlayerChannelRef playerChannelId="player22_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player22_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player22_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player22_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player23_x"/>
+               <PlayerChannelRef playerChannelId="player23_y"/>
+               <PlayerChannelRef playerChannelId="player23_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player23_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player23_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player23_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player24_x"/>
+               <PlayerChannelRef playerChannelId="player24_y"/>
+               <PlayerChannelRef playerChannelId="player24_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player24_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player24_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player24_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player25_x"/>
+               <PlayerChannelRef playerChannelId="player25_y"/>
+               <PlayerChannelRef playerChannelId="player25_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player25_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player25_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player25_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player26_x"/>
+               <PlayerChannelRef playerChannelId="player26_y"/>
+               <PlayerChannelRef playerChannelId="player26_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player26_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player26_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player26_bottom_right_y"/>
+            </SplitRegister>
+         </SplitRegister>
+         <SplitRegister separator=",">
+            <BallChannelRef channelId="x"/>
+            <BallChannelRef channelId="y"/>
+         </SplitRegister>
+         <SplitRegister separator=",">
+            <StringRegister name="cornerKickTopLeftX"/>
+            <StringRegister name="cornerKickTopLeftY"/>
+            <StringRegister name="cornerKickTopRightX"/>
+            <StringRegister name="cornerKickTopRightY"/>
+            <StringRegister name="cornerKickBottomRightX"/>
+            <StringRegister name="cornerKickBottomRightY"/>
+            <StringRegister name="cornerKickBottomLeftX"/>
+            <StringRegister name="cornerKickBottomLeftY"/>
+         </SplitRegister>
+      </DataFormatSpecification>
+      <DataFormatSpecification endFrame="115363" separator=":" startFrame="100961">
+         <StringRegister name="frameCount"/>
+         <SplitRegister separator=";">
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player1_x"/>
+               <PlayerChannelRef playerChannelId="player1_y"/>
+               <PlayerChannelRef playerChannelId="player1_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player1_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player1_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player1_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player2_x"/>
+               <PlayerChannelRef playerChannelId="player2_y"/>
+               <PlayerChannelRef playerChannelId="player2_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player2_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player2_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player2_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player3_x"/>
+               <PlayerChannelRef playerChannelId="player3_y"/>
+               <PlayerChannelRef playerChannelId="player3_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player3_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player3_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player3_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player4_x"/>
+               <PlayerChannelRef playerChannelId="player4_y"/>
+               <PlayerChannelRef playerChannelId="player4_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player4_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player4_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player4_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player12_x"/>
+               <PlayerChannelRef playerChannelId="player12_y"/>
+               <PlayerChannelRef playerChannelId="player12_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player12_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player12_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player12_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player14_x"/>
+               <PlayerChannelRef playerChannelId="player14_y"/>
+               <PlayerChannelRef playerChannelId="player14_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player14_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player14_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player14_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player7_x"/>
+               <PlayerChannelRef playerChannelId="player7_y"/>
+               <PlayerChannelRef playerChannelId="player7_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player7_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player7_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player7_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player13_x"/>
+               <PlayerChannelRef playerChannelId="player13_y"/>
+               <PlayerChannelRef playerChannelId="player13_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player13_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player13_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player13_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player9_x"/>
+               <PlayerChannelRef playerChannelId="player9_y"/>
+               <PlayerChannelRef playerChannelId="player9_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player9_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player9_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player9_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player10_x"/>
+               <PlayerChannelRef playerChannelId="player10_y"/>
+               <PlayerChannelRef playerChannelId="player10_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player10_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player10_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player10_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player11_x"/>
+               <PlayerChannelRef playerChannelId="player11_y"/>
+               <PlayerChannelRef playerChannelId="player11_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player11_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player11_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player11_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player16_x"/>
+               <PlayerChannelRef playerChannelId="player16_y"/>
+               <PlayerChannelRef playerChannelId="player16_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player16_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player16_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player16_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player17_x"/>
+               <PlayerChannelRef playerChannelId="player17_y"/>
+               <PlayerChannelRef playerChannelId="player17_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player17_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player17_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player17_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player18_x"/>
+               <PlayerChannelRef playerChannelId="player18_y"/>
+               <PlayerChannelRef playerChannelId="player18_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player18_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player18_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player18_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player19_x"/>
+               <PlayerChannelRef playerChannelId="player19_y"/>
+               <PlayerChannelRef playerChannelId="player19_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player19_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player19_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player19_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player20_x"/>
+               <PlayerChannelRef playerChannelId="player20_y"/>
+               <PlayerChannelRef playerChannelId="player20_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player20_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player20_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player20_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player21_x"/>
+               <PlayerChannelRef playerChannelId="player21_y"/>
+               <PlayerChannelRef playerChannelId="player21_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player21_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player21_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player21_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player22_x"/>
+               <PlayerChannelRef playerChannelId="player22_y"/>
+               <PlayerChannelRef playerChannelId="player22_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player22_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player22_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player22_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player23_x"/>
+               <PlayerChannelRef playerChannelId="player23_y"/>
+               <PlayerChannelRef playerChannelId="player23_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player23_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player23_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player23_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player24_x"/>
+               <PlayerChannelRef playerChannelId="player24_y"/>
+               <PlayerChannelRef playerChannelId="player24_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player24_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player24_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player24_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player25_x"/>
+               <PlayerChannelRef playerChannelId="player25_y"/>
+               <PlayerChannelRef playerChannelId="player25_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player25_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player25_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player25_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player26_x"/>
+               <PlayerChannelRef playerChannelId="player26_y"/>
+               <PlayerChannelRef playerChannelId="player26_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player26_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player26_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player26_bottom_right_y"/>
+            </SplitRegister>
+         </SplitRegister>
+         <SplitRegister separator=",">
+            <BallChannelRef channelId="x"/>
+            <BallChannelRef channelId="y"/>
+         </SplitRegister>
+         <SplitRegister separator=",">
+            <StringRegister name="cornerKickTopLeftX"/>
+            <StringRegister name="cornerKickTopLeftY"/>
+            <StringRegister name="cornerKickTopRightX"/>
+            <StringRegister name="cornerKickTopRightY"/>
+            <StringRegister name="cornerKickBottomRightX"/>
+            <StringRegister name="cornerKickBottomRightY"/>
+            <StringRegister name="cornerKickBottomLeftX"/>
+            <StringRegister name="cornerKickBottomLeftY"/>
+         </SplitRegister>
+      </DataFormatSpecification>
+      <DataFormatSpecification endFrame="115477" separator=":" startFrame="115364">
+         <StringRegister name="frameCount"/>
+         <SplitRegister separator=";">
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player1_x"/>
+               <PlayerChannelRef playerChannelId="player1_y"/>
+               <PlayerChannelRef playerChannelId="player1_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player1_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player1_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player1_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player2_x"/>
+               <PlayerChannelRef playerChannelId="player2_y"/>
+               <PlayerChannelRef playerChannelId="player2_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player2_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player2_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player2_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player3_x"/>
+               <PlayerChannelRef playerChannelId="player3_y"/>
+               <PlayerChannelRef playerChannelId="player3_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player3_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player3_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player3_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player4_x"/>
+               <PlayerChannelRef playerChannelId="player4_y"/>
+               <PlayerChannelRef playerChannelId="player4_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player4_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player4_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player4_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player12_x"/>
+               <PlayerChannelRef playerChannelId="player12_y"/>
+               <PlayerChannelRef playerChannelId="player12_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player12_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player12_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player12_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player14_x"/>
+               <PlayerChannelRef playerChannelId="player14_y"/>
+               <PlayerChannelRef playerChannelId="player14_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player14_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player14_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player14_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player7_x"/>
+               <PlayerChannelRef playerChannelId="player7_y"/>
+               <PlayerChannelRef playerChannelId="player7_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player7_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player7_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player7_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player13_x"/>
+               <PlayerChannelRef playerChannelId="player13_y"/>
+               <PlayerChannelRef playerChannelId="player13_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player13_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player13_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player13_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player9_x"/>
+               <PlayerChannelRef playerChannelId="player9_y"/>
+               <PlayerChannelRef playerChannelId="player9_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player9_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player9_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player9_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player10_x"/>
+               <PlayerChannelRef playerChannelId="player10_y"/>
+               <PlayerChannelRef playerChannelId="player10_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player10_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player10_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player10_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player11_x"/>
+               <PlayerChannelRef playerChannelId="player11_y"/>
+               <PlayerChannelRef playerChannelId="player11_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player11_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player11_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player11_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player16_x"/>
+               <PlayerChannelRef playerChannelId="player16_y"/>
+               <PlayerChannelRef playerChannelId="player16_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player16_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player16_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player16_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player27_x"/>
+               <PlayerChannelRef playerChannelId="player27_y"/>
+               <PlayerChannelRef playerChannelId="player27_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player27_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player27_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player27_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player18_x"/>
+               <PlayerChannelRef playerChannelId="player18_y"/>
+               <PlayerChannelRef playerChannelId="player18_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player18_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player18_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player18_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player19_x"/>
+               <PlayerChannelRef playerChannelId="player19_y"/>
+               <PlayerChannelRef playerChannelId="player19_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player19_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player19_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player19_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player20_x"/>
+               <PlayerChannelRef playerChannelId="player20_y"/>
+               <PlayerChannelRef playerChannelId="player20_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player20_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player20_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player20_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player21_x"/>
+               <PlayerChannelRef playerChannelId="player21_y"/>
+               <PlayerChannelRef playerChannelId="player21_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player21_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player21_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player21_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player22_x"/>
+               <PlayerChannelRef playerChannelId="player22_y"/>
+               <PlayerChannelRef playerChannelId="player22_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player22_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player22_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player22_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player23_x"/>
+               <PlayerChannelRef playerChannelId="player23_y"/>
+               <PlayerChannelRef playerChannelId="player23_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player23_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player23_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player23_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player24_x"/>
+               <PlayerChannelRef playerChannelId="player24_y"/>
+               <PlayerChannelRef playerChannelId="player24_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player24_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player24_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player24_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player25_x"/>
+               <PlayerChannelRef playerChannelId="player25_y"/>
+               <PlayerChannelRef playerChannelId="player25_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player25_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player25_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player25_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player26_x"/>
+               <PlayerChannelRef playerChannelId="player26_y"/>
+               <PlayerChannelRef playerChannelId="player26_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player26_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player26_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player26_bottom_right_y"/>
+            </SplitRegister>
+         </SplitRegister>
+         <SplitRegister separator=",">
+            <BallChannelRef channelId="x"/>
+            <BallChannelRef channelId="y"/>
+         </SplitRegister>
+         <SplitRegister separator=",">
+            <StringRegister name="cornerKickTopLeftX"/>
+            <StringRegister name="cornerKickTopLeftY"/>
+            <StringRegister name="cornerKickTopRightX"/>
+            <StringRegister name="cornerKickTopRightY"/>
+            <StringRegister name="cornerKickBottomRightX"/>
+            <StringRegister name="cornerKickBottomRightY"/>
+            <StringRegister name="cornerKickBottomLeftX"/>
+            <StringRegister name="cornerKickBottomLeftY"/>
+         </SplitRegister>
+      </DataFormatSpecification>
+      <DataFormatSpecification endFrame="122745" separator=":" startFrame="115478">
+         <StringRegister name="frameCount"/>
+         <SplitRegister separator=";">
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player1_x"/>
+               <PlayerChannelRef playerChannelId="player1_y"/>
+               <PlayerChannelRef playerChannelId="player1_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player1_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player1_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player1_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player2_x"/>
+               <PlayerChannelRef playerChannelId="player2_y"/>
+               <PlayerChannelRef playerChannelId="player2_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player2_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player2_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player2_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player3_x"/>
+               <PlayerChannelRef playerChannelId="player3_y"/>
+               <PlayerChannelRef playerChannelId="player3_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player3_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player3_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player3_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player4_x"/>
+               <PlayerChannelRef playerChannelId="player4_y"/>
+               <PlayerChannelRef playerChannelId="player4_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player4_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player4_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player4_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player12_x"/>
+               <PlayerChannelRef playerChannelId="player12_y"/>
+               <PlayerChannelRef playerChannelId="player12_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player12_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player12_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player12_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player14_x"/>
+               <PlayerChannelRef playerChannelId="player14_y"/>
+               <PlayerChannelRef playerChannelId="player14_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player14_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player14_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player14_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player7_x"/>
+               <PlayerChannelRef playerChannelId="player7_y"/>
+               <PlayerChannelRef playerChannelId="player7_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player7_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player7_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player7_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player13_x"/>
+               <PlayerChannelRef playerChannelId="player13_y"/>
+               <PlayerChannelRef playerChannelId="player13_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player13_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player13_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player13_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player9_x"/>
+               <PlayerChannelRef playerChannelId="player9_y"/>
+               <PlayerChannelRef playerChannelId="player9_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player9_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player9_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player9_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player10_x"/>
+               <PlayerChannelRef playerChannelId="player10_y"/>
+               <PlayerChannelRef playerChannelId="player10_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player10_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player10_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player10_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player11_x"/>
+               <PlayerChannelRef playerChannelId="player11_y"/>
+               <PlayerChannelRef playerChannelId="player11_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player11_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player11_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player11_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player16_x"/>
+               <PlayerChannelRef playerChannelId="player16_y"/>
+               <PlayerChannelRef playerChannelId="player16_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player16_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player16_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player16_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player27_x"/>
+               <PlayerChannelRef playerChannelId="player27_y"/>
+               <PlayerChannelRef playerChannelId="player27_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player27_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player27_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player27_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player18_x"/>
+               <PlayerChannelRef playerChannelId="player18_y"/>
+               <PlayerChannelRef playerChannelId="player18_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player18_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player18_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player18_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player19_x"/>
+               <PlayerChannelRef playerChannelId="player19_y"/>
+               <PlayerChannelRef playerChannelId="player19_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player19_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player19_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player19_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player20_x"/>
+               <PlayerChannelRef playerChannelId="player20_y"/>
+               <PlayerChannelRef playerChannelId="player20_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player20_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player20_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player20_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player21_x"/>
+               <PlayerChannelRef playerChannelId="player21_y"/>
+               <PlayerChannelRef playerChannelId="player21_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player21_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player21_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player21_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player22_x"/>
+               <PlayerChannelRef playerChannelId="player22_y"/>
+               <PlayerChannelRef playerChannelId="player22_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player22_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player22_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player22_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player23_x"/>
+               <PlayerChannelRef playerChannelId="player23_y"/>
+               <PlayerChannelRef playerChannelId="player23_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player23_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player23_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player23_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player28_x"/>
+               <PlayerChannelRef playerChannelId="player28_y"/>
+               <PlayerChannelRef playerChannelId="player28_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player28_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player28_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player28_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player25_x"/>
+               <PlayerChannelRef playerChannelId="player25_y"/>
+               <PlayerChannelRef playerChannelId="player25_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player25_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player25_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player25_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player26_x"/>
+               <PlayerChannelRef playerChannelId="player26_y"/>
+               <PlayerChannelRef playerChannelId="player26_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player26_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player26_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player26_bottom_right_y"/>
+            </SplitRegister>
+         </SplitRegister>
+         <SplitRegister separator=",">
+            <BallChannelRef channelId="x"/>
+            <BallChannelRef channelId="y"/>
+         </SplitRegister>
+         <SplitRegister separator=",">
+            <StringRegister name="cornerKickTopLeftX"/>
+            <StringRegister name="cornerKickTopLeftY"/>
+            <StringRegister name="cornerKickTopRightX"/>
+            <StringRegister name="cornerKickTopRightY"/>
+            <StringRegister name="cornerKickBottomRightX"/>
+            <StringRegister name="cornerKickBottomRightY"/>
+            <StringRegister name="cornerKickBottomLeftX"/>
+            <StringRegister name="cornerKickBottomLeftY"/>
+         </SplitRegister>
+      </DataFormatSpecification>
+      <DataFormatSpecification endFrame="144442" separator=":" startFrame="122746">
+         <StringRegister name="frameCount"/>
+         <SplitRegister separator=";">
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player1_x"/>
+               <PlayerChannelRef playerChannelId="player1_y"/>
+               <PlayerChannelRef playerChannelId="player1_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player1_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player1_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player1_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player2_x"/>
+               <PlayerChannelRef playerChannelId="player2_y"/>
+               <PlayerChannelRef playerChannelId="player2_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player2_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player2_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player2_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player3_x"/>
+               <PlayerChannelRef playerChannelId="player3_y"/>
+               <PlayerChannelRef playerChannelId="player3_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player3_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player3_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player3_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player4_x"/>
+               <PlayerChannelRef playerChannelId="player4_y"/>
+               <PlayerChannelRef playerChannelId="player4_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player4_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player4_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player4_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player12_x"/>
+               <PlayerChannelRef playerChannelId="player12_y"/>
+               <PlayerChannelRef playerChannelId="player12_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player12_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player12_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player12_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player14_x"/>
+               <PlayerChannelRef playerChannelId="player14_y"/>
+               <PlayerChannelRef playerChannelId="player14_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player14_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player14_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player14_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player7_x"/>
+               <PlayerChannelRef playerChannelId="player7_y"/>
+               <PlayerChannelRef playerChannelId="player7_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player7_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player7_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player7_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player13_x"/>
+               <PlayerChannelRef playerChannelId="player13_y"/>
+               <PlayerChannelRef playerChannelId="player13_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player13_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player13_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player13_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player9_x"/>
+               <PlayerChannelRef playerChannelId="player9_y"/>
+               <PlayerChannelRef playerChannelId="player9_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player9_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player9_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player9_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player15_x"/>
+               <PlayerChannelRef playerChannelId="player15_y"/>
+               <PlayerChannelRef playerChannelId="player15_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player15_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player15_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player15_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player11_x"/>
+               <PlayerChannelRef playerChannelId="player11_y"/>
+               <PlayerChannelRef playerChannelId="player11_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player11_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player11_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player11_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player16_x"/>
+               <PlayerChannelRef playerChannelId="player16_y"/>
+               <PlayerChannelRef playerChannelId="player16_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player16_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player16_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player16_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player27_x"/>
+               <PlayerChannelRef playerChannelId="player27_y"/>
+               <PlayerChannelRef playerChannelId="player27_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player27_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player27_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player27_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player18_x"/>
+               <PlayerChannelRef playerChannelId="player18_y"/>
+               <PlayerChannelRef playerChannelId="player18_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player18_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player18_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player18_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player19_x"/>
+               <PlayerChannelRef playerChannelId="player19_y"/>
+               <PlayerChannelRef playerChannelId="player19_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player19_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player19_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player19_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player20_x"/>
+               <PlayerChannelRef playerChannelId="player20_y"/>
+               <PlayerChannelRef playerChannelId="player20_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player20_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player20_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player20_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player21_x"/>
+               <PlayerChannelRef playerChannelId="player21_y"/>
+               <PlayerChannelRef playerChannelId="player21_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player21_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player21_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player21_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player22_x"/>
+               <PlayerChannelRef playerChannelId="player22_y"/>
+               <PlayerChannelRef playerChannelId="player22_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player22_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player22_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player22_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player23_x"/>
+               <PlayerChannelRef playerChannelId="player23_y"/>
+               <PlayerChannelRef playerChannelId="player23_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player23_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player23_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player23_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player28_x"/>
+               <PlayerChannelRef playerChannelId="player28_y"/>
+               <PlayerChannelRef playerChannelId="player28_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player28_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player28_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player28_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player25_x"/>
+               <PlayerChannelRef playerChannelId="player25_y"/>
+               <PlayerChannelRef playerChannelId="player25_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player25_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player25_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player25_bottom_right_y"/>
+            </SplitRegister>
+            <SplitRegister separator=",">
+               <PlayerChannelRef playerChannelId="player26_x"/>
+               <PlayerChannelRef playerChannelId="player26_y"/>
+               <PlayerChannelRef playerChannelId="player26_top_left_x"/>
+               <PlayerChannelRef playerChannelId="player26_top_left_y"/>
+               <PlayerChannelRef playerChannelId="player26_bottom_right_x"/>
+               <PlayerChannelRef playerChannelId="player26_bottom_right_y"/>
+            </SplitRegister>
+         </SplitRegister>
+         <SplitRegister separator=",">
+            <BallChannelRef channelId="x"/>
+            <BallChannelRef channelId="y"/>
+         </SplitRegister>
+         <SplitRegister separator=",">
+            <StringRegister name="cornerKickTopLeftX"/>
+            <StringRegister name="cornerKickTopLeftY"/>
+            <StringRegister name="cornerKickTopRightX"/>
+            <StringRegister name="cornerKickTopRightY"/>
+            <StringRegister name="cornerKickBottomRightX"/>
+            <StringRegister name="cornerKickBottomRightY"/>
+            <StringRegister name="cornerKickBottomLeftX"/>
+            <StringRegister name="cornerKickBottomLeftY"/>
+         </SplitRegister>
+      </DataFormatSpecification>
+   </DataFormatSpecifications>
+</main>
