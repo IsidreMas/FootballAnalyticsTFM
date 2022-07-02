@@ -12,6 +12,7 @@ Data can be found at: https://github.com/metrica-sports/sample-data
 """
 import numpy as np
 import scipy.signal as signal
+from Tracking_Constants import *
 
 def calc_player_velocities(team, players = None, smoothing=True, filter_='Savitzky-Golay', window=7, polyorder=1, maxspeed = 12):
     """ calc_player_velocities( tracking_data )
@@ -45,6 +46,40 @@ def calc_player_velocities(team, players = None, smoothing=True, filter_='Savitz
     
     # index of first frame in second half
     second_half_idx = team.Period.values.searchsorted(1.5, side='right')+1
+
+    # Center of mass velocities
+    vx = team["team_meanx"].diff() / dt
+    vy = team["team_meany"].diff() / dt
+    stdvx = team["team_sdx"].diff() / dt
+    stdvy = team["team_sdy"].diff() / dt
+
+    if maxspeed > 0:
+        # remove unsmoothed data points that exceed the maximum speed (these are most likely position errors)
+        raw_speed = np.sqrt(vx ** 2 + vy ** 2)
+        vx[raw_speed > maxspeed] = np.nan
+        vy[raw_speed > maxspeed] = np.nan
+
+    if smoothing:
+        if filter_ == 'Savitzky-Golay':
+            vx = signal.savgol_filter(vx, window_length=window, polyorder=polyorder)
+            vy = signal.savgol_filter(vy, window_length=window, polyorder=polyorder)
+            stdvx = signal.savgol_filter(vx, window_length=window, polyorder=polyorder)
+            stdvy = signal.savgol_filter(vy, window_length=window, polyorder=polyorder)
+        elif filter_ == 'moving average':
+            ma_window = np.ones(window) / window
+            # calculate first half velocity
+            vx = np.convolve(vx, ma_window, mode='same')
+            vy = np.convolve(vy, ma_window, mode='same')
+            stdvx = np.convolve(vx, ma_window, mode='same')
+            stdvy = np.convolve(vy, ma_window, mode='same')
+
+    team['team_meanvx'] = vx
+    team['team_meanvy'] = vy
+    team['team_stdvx'] = stdvx
+    team['team_stdvy'] = stdvy
+
+
+
     
     # estimate velocities for players in team
     for player in players: # cycle through players individually
@@ -79,7 +114,13 @@ def calc_player_velocities(team, players = None, smoothing=True, filter_='Savitz
         # put player speed in x,y direction, and total speed back in the data frame
         team[player + "_vx"] = vx
         team[player + "_vy"] = vy
+        team[player + "_cmvx"] = vx - team["team_meanvx"]
+        team[player + "_cmvy"] = vy - team["team_meanvy"]
+        team[player + "_normvx"] = ((vx - team["team_meanvx"])*team["team_sdx"] - (team[player + "_x"]-team["team_meanx"])*team['team_stdvx'])/team["team_varx"]
+        team[player + "_normvy"] = ((vy - team["team_meanvy"])*team["team_sdy"] - (team[player + "_y"]-team["team_meany"])*team['team_stdvy'])/team["team_vary"]
         team[player + "_speed"] = np.sqrt( vx**2 + vy**2 )
+        team[player + "_speedcm"] = np.sqrt(team[player + "_cmvx"] ** 2 + team[player + "_cmvy"] ** 2)
+        team[player + "_speednorm"] = np.sqrt(team[player + "_normvx"] ** 2 + team[player + "_normvy"] ** 2)
 
     return team
 
@@ -94,12 +135,16 @@ def remove_player_normals(team):
     team = team.drop(columns=columns)
     return team
 
-def calc_player_norm_positions(team1, team2 = None):
+def calc_player_norm_positions(team1, team2 = None, goalkeeper1 = None,
+                               goalkeeper2 = None,
+                               global_normalization = False,
+                               normalize_goalkeeper = False):
     # remove any normalization data ifalready in the dataframe
     team1 = remove_player_normals(team1)
     # Get the player ids (REVISE THIS, MIGHT NOT WORK WITH OTHER DATA SOURCES/PLAYER IDS)
     team1_players_ids = np.unique( [ c.split('_')[0]+'_'+c.split('_')[1] for c in team1.columns if c[:4] in ['Home','Away'] ] )
-
+    team2_players_ids = np.unique([c.split('_')[0] + '_' + c.split('_')[1] for c in team2.columns if
+                                   c.split('_')[0] in team2.columns[4].split('_')[0]])
     #Initialitation of necessary variables to normalize positions 
     team1['team_cmx']=0
     team1['team_cmy']=0
@@ -109,12 +154,35 @@ def calc_player_norm_positions(team1, team2 = None):
 
     # estimate normal positions for players in team1
     for player in team1_players_ids: # cycle through players individually
-        team1['team_cmx']=team1['team_cmx'].add(team1[player+'_x'], fill_value = 0)
-        team1['team_cmy']=team1['team_cmy'].add(team1[player+'_y'], fill_value = 0)
-        team1['team_cmx2']=team1['team_cmx2'].add(team1[player+'_x']**2, fill_value = 0)
-        team1['team_cmy2']=team1['team_cmy2'].add(team1[player+'_y']**2, fill_value = 0)
-        team1['num_team']=team1['num_team'].add(team1[player + '_x']/team1[player + '_x'], fill_value = 0)
-    
+        if not normalize_goalkeeper:
+            if int(player.split("_")[1]) != int(goalkeeper1):
+                team1['team_cmx']=team1['team_cmx'].add(team1[player+'_x'], fill_value = 0)
+                team1['team_cmy']=team1['team_cmy'].add(team1[player+'_y'], fill_value = 0)
+                team1['team_cmx2']=team1['team_cmx2'].add(team1[player+'_x']**2, fill_value = 0)
+                team1['team_cmy2']=team1['team_cmy2'].add(team1[player+'_y']**2, fill_value = 0)
+                team1['num_team']=team1['num_team'].add(team1[player + '_x']/team1[player + '_x'], fill_value = 0)
+        else:
+            team1['team_cmx'] = team1['team_cmx'].add(team1[player + '_x'], fill_value=0)
+            team1['team_cmy'] = team1['team_cmy'].add(team1[player + '_y'], fill_value=0)
+            team1['team_cmx2'] = team1['team_cmx2'].add(team1[player + '_x'] ** 2, fill_value=0)
+            team1['team_cmy2'] = team1['team_cmy2'].add(team1[player + '_y'] ** 2, fill_value=0)
+            team1['num_team'] = team1['num_team'].add(team1[player + '_x'] / team1[player + '_x'], fill_value=0)
+    if global_normalization:
+        for player in team2_players_ids:  # cycle through players individually
+            if not normalize_goalkeeper:
+                if int(player.split("_")[1]) != int(goalkeeper2):
+                    team1['team_cmx'] = team1['team_cmx'].add(team2[player + '_x'], fill_value=0)
+                    team1['team_cmy'] = team1['team_cmy'].add(team2[player + '_y'], fill_value=0)
+                    team1['team_cmx2'] = team1['team_cmx2'].add(team2[player + '_x'] ** 2, fill_value=0)
+                    team1['team_cmy2'] = team1['team_cmy2'].add(team2[player + '_y'] ** 2, fill_value=0)
+                    team1['num_team'] = team1['num_team'].add(team2[player + '_x'] / team2[player + '_x'], fill_value=0)
+            else:
+                team1['team_cmx'] = team1['team_cmx'].add(team2[player + '_x'], fill_value=0)
+                team1['team_cmy'] = team1['team_cmy'].add(team2[player + '_y'], fill_value=0)
+                team1['team_cmx2'] = team1['team_cmx2'].add(team2[player + '_x'] ** 2, fill_value=0)
+                team1['team_cmy2'] = team1['team_cmy2'].add(team2[player + '_y'] ** 2, fill_value=0)
+                team1['num_team'] = team1['num_team'].add(team2[player + '_x'] / team2[player + '_x'], fill_value=0)
+
     team1['team_meanx']=team1['team_cmx']/team1['num_team']
     team1['team_meany']=team1['team_cmy']/team1['num_team']
     team1['team_varx']=team1['team_cmx2']/team1['num_team']-team1['team_meanx']**2
@@ -124,16 +192,12 @@ def calc_player_norm_positions(team1, team2 = None):
 
     for player in team1_players_ids:
         # put player normal position in x,y direction, and total speed back in the data frame
-        #if (team[player+'_x']!="NaN") and (team[player+'_y']!="NaN"):
-            team1[player + "_normx"] = (team1[player + "_x"]-team1['team_meanx'])/team1['team_sdx']
-            team1[player + "_normy"] = (team1[player + "_y"]-team1['team_meany'])/team1['team_sdy']
-    
-    if team2 is not None:
-        # Get the player ids (REVISE THIS, MIGHT NOT WORK WITH OTHER DATA SOURCES/PLAYER IDS)
-        team2_players_ids = np.unique( [ c.split('_')[0]+'_'+c.split('_')[1] for c in team2.columns if c.split('_')[0] in team2.columns[4].split('_')[0]] )
-        for player in team2_players_ids:
-            team1[player + "_normx"] = (team2[player + "_x"]-team1['team_meanx'])/team1['team_sdx']
-            team1[player + "_normy"] = (team2[player + "_y"]-team1['team_meany'])/team1['team_sdy']
+        team1[player + "_normx"] = (team1[player + "_x"]-team1['team_meanx'])/team1['team_sdx']
+        team1[player + "_normy"] = (team1[player + "_y"]-team1['team_meany'])/team1['team_sdy']
+
+    for player in team2_players_ids:
+        team1[player + "_normx"] = (team2[player + "_x"]-team1['team_meanx'])/team1['team_sdx']
+        team1[player + "_normy"] = (team2[player + "_y"]-team1['team_meany'])/team1['team_sdy']
 
     team1["ball_normx"] = (team1["ball_x"]-team1["team_meanx"])/team1["team_sdx"]
     team1["ball_normy"] = (team1["ball_y"]-team1["team_meany"])/team1["team_sdy"]

@@ -18,6 +18,8 @@ def bivariate_normal_distribution(tracking_data, players = None, ball = False, a
     if not against:
         dist_stats['x_mean'] = [tracking_data[player+'_x'].mean() for player in players]
         dist_stats['y_mean'] = [tracking_data[player+'_y'].mean() for player in players]
+        dist_stats['vx_mean'] = [tracking_data[player + '_vx'].mean() for player in players]
+        dist_stats['vy_mean'] = [tracking_data[player + '_vy'].mean() for player in players]
         dist_stats['distance'] = [np.sqrt(tracking_data[player+'_x'].diff()**2+tracking_data[player+'_x'].diff()**2).sum() for player in players]
     dist_stats['normx_mean'] = [tracking_data[player+'_normx'].mean() for player in players]
     dist_stats['normy_mean'] = [tracking_data[player+'_normy'].mean() for player in players]
@@ -25,17 +27,23 @@ def bivariate_normal_distribution(tracking_data, players = None, ball = False, a
     if len(tracking_data) > 1:
         if not against:
             cov_matrices = [tracking_data[[player+'_x',player+'_y']].cov() for player in players]
-            values, vectors = np.linalg.eig(cov_matrices)
-            dist_stats['cov_x_std'] = np.sqrt(values[:,0])
-            dist_stats['cov_y_std'] = np.sqrt(values[:,1])
-            dist_stats['cov_angle'] = np.arctan(vectors[:,0,1]/vectors[:,0,0])
+            try:
+                values, vectors = np.linalg.eig(cov_matrices)
+                dist_stats['cov_x_std'] = np.sqrt(values[:,0])
+                dist_stats['cov_y_std'] = np.sqrt(values[:,1])
+                dist_stats['cov_angle'] = np.arctan(vectors[:,0,1]/vectors[:,0,0])
+            except:
+                pass
             dist_stats['x_std'] = [tracking_data[player+'_x'].std() for player in players]
             dist_stats['y_std'] = [tracking_data[player+'_y'].std() for player in players]
-        cov_matrices = [tracking_data[[player+'_normx',player+'_normy']].cov() for player in players]
-        values, vectors = np.linalg.eig(cov_matrices)
-        dist_stats['cov_normx_std'] = np.sqrt(values[:,0])
-        dist_stats['cov_normy_std'] = np.sqrt(values[:,1])
-        dist_stats['cov_norm_angle'] = np.arctan(vectors[:,0,1]/vectors[:,0,0])
+        try:
+            cov_matrices = [tracking_data[[player+'_normx',player+'_normy']].cov() for player in players]
+            values, vectors = np.linalg.eig(cov_matrices)
+            dist_stats['cov_normx_std'] = np.sqrt(values[:,0])
+            dist_stats['cov_normy_std'] = np.sqrt(values[:,1])
+            dist_stats['cov_norm_angle'] = np.arctan(vectors[:,0,1]/vectors[:,0,0])
+        except:
+            pass
         dist_stats['normx_std'] = [tracking_data[player+'_normx'].std() for player in players]
         dist_stats['normy_std'] = [tracking_data[player+'_normy'].std() for player in players]
     else:
@@ -84,8 +92,8 @@ def histogram(tracking_data,
         half_width = field_dimen[0]/2
         half_height = field_dimen[1]/2
     elif normalised:
-        half_width = 3
-        half_height = 3
+        half_width = 4
+        half_height = 4
         if not binsx:
             binsx = 100
         if not binsy:
@@ -101,7 +109,7 @@ def histogram(tracking_data,
     xhist, xedges = np.histogram(positions_x, range = (-half_width,half_width), bins=binsx, **kwargs)
     yhist, yedges = np.histogram(positions_y, range = (-half_height,half_height), bins=binsy, **kwargs)
     if return_dicts:
-        return {'top_x':xhist, 'bottom_x':xhist*0, 'left_x':xedges[:-1], 'right_x':xedges[1:]}, {'right_y':yhist, 'left_y':yhist*0, 'bottom_y':yedges[:-1], 'top_y':yedges[1:]}
+        return {'top_x':xhist/xhist.max(), 'bottom_x':xhist*0, 'left_x':xedges[:-1], 'right_x':xedges[1:]}, {'right_y':yhist/yhist.max(), 'left_y':yhist*0, 'bottom_y':yedges[:-1], 'top_y':yedges[1:]}
     else:
-        return xhist, yhist, xedges, yedges
+        return xhist/xhist.max(), yhist/yhist.max(), xedges, yedges
         

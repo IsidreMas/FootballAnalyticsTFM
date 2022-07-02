@@ -30,9 +30,10 @@ import re
 import pandas as pd
 import csv
 import numpy as np
+from Tracking_Constants import *
 import xml.etree.ElementTree as ET
 
-def read_match_data(data_source, match_id, metadata_path, tracking_path, events_path):
+def read_match_data(data_source, match_id, metadata_path, tracking_path, events_path, home_path, away_path):
 
     """
     Reads the tracking data from given data source and match identifiers and returns dataframes
@@ -49,14 +50,31 @@ def read_match_data(data_source, match_id, metadata_path, tracking_path, events_
     tracking_home, tracking_away, events: Dataframes with the tracking data read from source.
     """
     if data_source == "FCB":
-        tracking_home, tracking_away, events = read_FCB_data(metadata_path, 
+        tracking_home, tracking_away, events = read_FCB_data(metadata_path,
                                                              tracking_path, 
                                                              events_path)
+    elif data_source == "FCB_csv":
+        tracking_home, tracking_away, events = read_FCB_csv(home_path,
+                                                            away_path,
+                                                            events_path)
+    elif data_source == "tactics":
+        tracking_home, tracking_away, events = read_tactics(home_path,
+                                                            away_path,
+                                                            events_path)
     else:
         tracking_home = tracking_data(data_source,match_id,'Home')
         tracking_away = tracking_data(data_source,match_id,'Away')
         events = read_event_data(data_source,match_id)
-    return tracking_home,tracking_away,events
+
+    #Crop first dataframes without ball
+
+    kick_off_home = tracking_home["ball_x"].first_valid_index()
+    kick_off_away = tracking_away["ball_x"].first_valid_index()
+
+    if kick_off_home == kick_off_away:
+        print("Kick off indices match between home and away.")
+
+    return tracking_home.truncate(before=kick_off_home), tracking_away.truncate(before=kick_off_away), events
 
 def get_datadir(source):
     if source == 'metrica-sports':
@@ -158,7 +176,7 @@ def to_metric_coordinates(data,data_source,field_dimen=(106.,68.)):
     dataframe: Dataframe with the tracking data transformed to metric units.
     """
 
-    if data_source in ['metrica-sports', 'FCB']:
+    if data_source in ['metrica-sports', 'FCB', 'FCB_csv']:
         x_columns = [c for c in data.columns if c[-1].lower()=='x']
         y_columns = [c for c in data.columns if c[-1].lower()=='y']
         data[x_columns] = ( data[x_columns]-0.5 ) * field_dimen[0]
@@ -190,7 +208,14 @@ def to_single_playing_direction(home,away,events):
     for tracking in [home,away,events]:
         second_half_idx = tracking.Period.values.searchsorted(1.5, side='right')+1
         columns = [c for c in tracking.columns if c[-1].lower() in ['x','y']]
-        tracking.loc[second_half_idx:,columns] *= -1
+        tracking.loc[second_half_idx:, columns] *= -1
+
+    if find_playing_direction(home, "Home") == -1:
+        print("Flipping teams so that home plays on the left...")
+        for tracking in [home, away, events]:
+            columns = [c for c in tracking.columns if c[-1].lower() in ['x', 'y']]
+            tracking.loc[:, columns] *= -1
+
     return home,away,events
 
 
@@ -200,19 +225,38 @@ def find_players(team):
 # Functions below not reviewed from the original Laurie Shaw's version.
 def find_playing_direction(team,teamname):
     '''
-    Find the direction of play for the team (based on where the goalkeepers are at kickoff). +1 is left->right and -1 is right->left
-    '''  
+    Find the direction of play for the team (based on where the mean x position of teamplayers is at kickoff). +1 is left->right and -1 is right->left
+    '''
+    kick_off_index = team["ball_x"].first_valid_index()
     GK_column_x = teamname+"_"+find_goalkeeper(team)+"_x"
     # +ve is left->right, -ve is right->left
-    return -np.sign(team.iloc[0][GK_column_x])
+    return -np.sign(team.iloc[kick_off_index][GK_column_x])
     
 def find_goalkeeper(team):
     '''
     Find the goalkeeper in team, identifying him/her as the player closest to goal at kick off
-    ''' 
+    '''
+    kick_off_index = team["ball_x"].first_valid_index()
     x_columns = [c for c in team.columns if c[-2:].lower()=='_x' and c[:4] in ['Home','Away']]
-    GK_col = team.iloc[0][x_columns].abs().idxmax(axis=1)
+    GK_col = team.iloc[kick_off_index][x_columns].abs()
+    GK_col = GK_col.idxmax(axis=0)
+    if GK_col.split('_')[1] in ['10', '6']:
+        return '1'
+    elif GK_col.split('_')[1] == '20':
+        return '16'
     return GK_col.split('_')[1]
+
+def find_goalkeeper_2(match):
+    '''
+    Find the goalkeeper in team, identifying him/her as the player closest to goal at kick off
+    '''
+    tracking_home = match.tracking_home
+    tracking_away = match.tracking_away
+    tracking_all = pd.concat([tracking_home, tracking_away[np.setdiff1d(tracking_away.columns, tracking_home.columns)]],
+                             axis=1)
+    sub = "_vx"
+    cols_to_plot = [s for s in tracking_all.columns.tolist() if (sub in s) & ("ball" not in s)]
+    return 1
 
 def read_FCB_data(metadata_path, tracking_data_path, events_path):
     """
@@ -285,4 +329,18 @@ def read_FCB_data(metadata_path, tracking_data_path, events_path):
     
     events=df
     
+    return home_tracking, away_tracking, events
+
+def read_FCB_csv(home_path, away_path, events_path):
+    home_tracking = pd.read_csv(home_path)
+    away_tracking = pd.read_csv(away_path)
+    events = pd.read_csv(events_path)
+    events["Team Name"] = events["Team"]
+    events["Team"] = events["From"].str.split("_").str[0]
+    return home_tracking, away_tracking, events
+
+def read_tactics(home_path, away_path, events_path):
+    home_tracking = pd.read_csv(home_path)
+    away_tracking = pd.read_csv(away_path)
+    events = pd.read_csv(events_path)
     return home_tracking, away_tracking, events
